@@ -1,0 +1,37 @@
+<?xml version='1.0'?>
+<sdf version='1.4'>
+<model name="Delta">
+<static>false</static>
+
+<link name='chassis'>
+    <pose>0 0 0 0 0 0</pose>
+<!-- Modifiy inertia -->
+    <inertial>
+	  <inertia>
+		<ixx>.000016571710</ixx>
+		<ixy>0.</ixy>
+		<ixz>0.</ixz>
+		<iyy>.000016655602</iyy>
+		<iyz>0.</iyz>
+		<izz>.000029261652</izz>
+	  </inertia>
+	  <mass>.033</mass>
+	</inertial>
+
+    <collision name='collision'>
+      <pose>0 0 0.01251 0 0 0</pose>
+      <geometry>
+        <box>
+          <size>.08 .08 .0252</size>
+        </box>
+      </geometry>
+    </collision>
+
+	<visual name='visual'>
+	    <geometry>
+	    	<mesh>
+	        <uri>model://crazyflie/meshes/CrazyFlie1_v1.dae</uri>
+	        </mesh>
+	    </geometry>
+	</visual>
+</link>
