@@ -1,0 +1,7 @@
+<launch>
+ <!--  <arg name="model" /> -->
+  <param name="robot_description" textfile="$(find delta)/urdf/delta.urdf" />
+  <include file= "$(find_gazebo_ros)/launch/empty_world.launch">
+  </include>
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" respawn="false" args="-param robot_description -urdf -model " />
+</launch>
