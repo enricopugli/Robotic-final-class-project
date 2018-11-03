@@ -1,9 +1,4 @@
-function [outputArg1,outputArg2] = Kinematic(inputArg1,inputArg2)
-%KINEMATIC Summary of this function goes here
-%   Detailed explanation goes here
+bodyNames = {'b1','b2','b3','b4','b5','b6'};
+parentNames = {'base','base','base','b1','b2','b3'};
 
-
-outputArg1 = inputArg1;
-outputArg2 = inputArg2;
-end
-
+delta = robotics.RigidBodyTree();
