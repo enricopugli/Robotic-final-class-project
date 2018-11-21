@@ -19,8 +19,8 @@ Parameters;
 I_bti = Im + lA^2*(m_b/3 + mC + 2*m_ab/3);    
 I_bt = diag([I_bti; I_bti; I_bti]);
 
-% Delta Jacobian
-J = Jacobian_DELTA(ee, q);
+% Delta robot Jacobian
+[J, ~, ~, ~]  = Jacobian_DELTA(ee, q);
 
 % Inverse dynamic
 ddq = I_bt\(tau - J'*m_nt*ddX);
