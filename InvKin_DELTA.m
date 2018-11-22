@@ -1,6 +1,9 @@
 function q = InvKin_DELTA(ee)
-%UNTITLED7 Summary of this function goes here
-%   Detailed explanation goes here
+%Computation of the inverse kinematic of the Delta robot
+
+% Loading parameters
+[] = Parameters_DELTA;
+
 
 end
 
