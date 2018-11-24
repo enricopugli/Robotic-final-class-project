@@ -1,9 +1,6 @@
 function [J, dJ] = Jacobian_DELTA(ee, q)
 % Give back Jacobian matrix and its derivative
 
-% Load Delta robot parameters
-[theta, R, ~, ~, l_A, ~, ~, ~, ~, ~, ~] = Parameters_DELTA;
-
 % Initialize matrices
 S = nan(3);
 B = nan(3);
