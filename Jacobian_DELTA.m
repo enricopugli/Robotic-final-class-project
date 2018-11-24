@@ -1,31 +1,36 @@
-function [J, s, b, db] = Jacobian_DELTA(ee, q)
+function [J, dJ] = Jacobian_DELTA(ee, q)
+% Give back Jacobian matrix and its derivative
 
 % Load Delta robot parameters
-Parameters;
+[theta, R, ~, ~, l_A, ~, ~, ~, ~, ~, ~] = Parameters_DELTA;
 
-%
-s = nan(3);
-b = nan(3);
-db = nan(3);
+% Initialize matrices
+S = nan(3);
+B = nan(3);
+dB = nan(3);
+dS = nan(3);
 
 for i=1:3
-    for j=1:3
-        R_b = R_base(theta(i));
-        s(i,j) = ee - R_b*([R 0 0]' - [l_a*cos(q(i)) 0 l_a*sin(q(i))]');
-        b(i,j) = R_b*[l_a*sin(q(i)) 0 l_a*cos(q(i))]';
-        db(i,j) = R_b*[-l_a*cos(q(i)); 0; -l_a*sin(q(i))];
-    end
+    % Rotation matrix from base plate frame to i-joint frame 
+    R_b = R_base(theta(i));
+    
+    % Matrix with s_i vectors as columns
+    S(:,i) = ee - R_b*([R 0 0]' - l_A*[cos(q(i)), 0, sin(q(i))]');
+    
+    % Matrix with b_i vectors as columns
+    B(:,i) = R_b*l_A*[-sin(q(i)), 0, cos(q(i))]';
+    
+    % Matrix with db_i vectors as columns
+    dB(:,i) = R_b*l_A*[-cos(q(i)); 0; -sin(q(i))];
+    
+    % Matrix with ds_i vectors as columns
+    dS(:,i) = ee - R_b*l_A*[-sin(q(i)), 0, cos(q(i))]';
 end
 
-s1 = s(1,:)';
-s2 = s(2,:)';
-s3 = s(3,:)';
-
-b1 = b(1,:)';
-b2 = b(2,:)';
-b3 = b(3,:)';
-
 % Jacobian
-J = [s1'; s2'; s3']*diag([s1'*b1 s2'*b2 s2'*b3]);
+J = S'\diag(diag(S'*B));
 
+% Jacobian derivative
+dSB = diag(diag(dS'*B)) + diag(diag(S'*dB)); 
+dJ = S'\(-dS'*J + dSB);
 end
