@@ -1,7 +1,7 @@
 function [J, dJ] = Jacobian_DELTA(ee, q)
 % Give back Jacobian matrix and its derivative
 
-[theta, R, m_b, m_br, l_A, r_Gb, m_fb, l_B, m_n, m_nt, I_bi] = Parameters_DELTA;
+[theta, R, ~, ~, l_A, ~, ~, ~, ~, ~, ~] = Parameters_DELTA;
 
 % Initialize matrices
 S = nan(3);
