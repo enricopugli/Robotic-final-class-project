@@ -2,7 +2,7 @@ function [B, C, G] = BCG_DELTA(ee, q)
 %UNTITLED6 Summary of this function goes here
 %   Detailed explanation goes here
 
-[theta, R, m_b, m_br, l_A, r_Gb, m_fb, l_B, m_n, m_nt, I_bi] = Parameters_DELTA;
+[theta, ~, ~, m_br, ~, r_Gb, ~, ~, ~, m_nt, I_bi] = Parameters_DELTA;
 
 % Arms intertia matrix
 I_b = diag([I_bi, I_bi, I_bi]);
