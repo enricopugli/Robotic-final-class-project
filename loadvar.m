@@ -41,7 +41,7 @@ I_bc = l_A^2*(m_b/3 + m_c + r_m*m_fb); % [Kg*m^2] Inertia of the arm
 I_bi = (I_m + I_brake)*k_r^2 + I_bc; % [Kg*m^2] Total inertia contribution of each upper arm
 
 % Direct dynamic equations
-load('Sdir.mat');
+% load('Sdir.mat');
 
 % Initialize
 ee = [0; 0; -2.1944];
