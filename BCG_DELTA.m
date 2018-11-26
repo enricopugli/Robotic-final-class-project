@@ -17,9 +17,14 @@ B = (I_b + m_nt*(J'*J));
 C = (J'*m_nt*dJ);
 
 % Gravitational elements matrix
-G_n = m_nt*[0; 0; -9.8];
-G_b = m_br*[0, 0, -9.8];
-G = -(J'*G_n + r_Gb*G_b*cos(theta'));
+G_n = m_nt*[0; 0; -9.81];
+G_b = m_br*[0; 0; -9.81];
+
+% tau_b =  r_Gb*[ cos(theta(1)); cos(theta(2)); -m_br*9.8*cos(theta(3))];
+
+tau_b =  r_Gb*[ cos(q(1)); cos(q(2)); -m_br*9.81*cos(q(3))];
+
+G = (J'*G_n + tau_b)
 
 end
 

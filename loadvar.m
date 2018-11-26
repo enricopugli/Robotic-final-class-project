@@ -35,8 +35,8 @@ m_nt = m_n + m_p + 3*(1-r_m*m_fb); % [Kg] total mass contribute of the travellin
 k_r = 1; % Gear reduction ratio
 
 % Inertia 
-I_m = 1; % [Kg*m^2] Inertia of the motor
-I_brake = 1; % [Kg*m^2] Inertia of the motor
+I_m = 0; % [Kg*m^2] Inertia of the motor
+I_brake = 0; % [Kg*m^2] Inertia of the motor
 I_bc = l_A^2*(m_b/3 + m_c + r_m*m_fb); % [Kg*m^2] Inertia of the arm
 I_bi = (I_m + I_brake)*k_r^2 + I_bc; % [Kg*m^2] Total inertia contribution of each upper arm
 
