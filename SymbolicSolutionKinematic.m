@@ -1,5 +1,7 @@
 
-syms x_ee y_ee z_ee q1 q2 q3 l_A l_B R
+syms x_ee y_ee z_ee q1 q2 q3 
+
+[theta, R, ~, ~, l_A, ~, ~, l_B, ~, ~, ~] = Parameters_DELTA;
 
 % System of equations
 
@@ -25,9 +27,11 @@ S = solve(eqns, vars1);
 toc
 
 % Inverse kinematic solution
+
 % fprintf('start solving inverse kinematic \n')
 % tic
 % vars2 = [q1, q2, q3];
 % [solq1, sloq2, sloq3] = solve(eqns, vars2);
 % toc
 % 
+
