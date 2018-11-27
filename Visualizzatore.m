@@ -59,9 +59,9 @@ for t = 1:t_final
     plot3(P3(1), P3(2), P3(3), 'or');
 
     %disegno delle spalle   
-    v1 = l_A * [cos(q(t,1)); 0; -sin(q(t,1))];
-    v2 = l_A * [cos(q(t,2)); 0; -sin(q(t,2))];
-    v3 = l_A * [cos(q(t,3)); 0; -sin(q(t,3))];  
+    v1 = [R; 0; 0] + l_A * [cos(q(t,1)); 0; -sin(q(t,1))];
+    v2 = [R; 0; 0] + l_A * [cos(q(t,2)); 0; -sin(q(t,2))];
+    v3 = [R; 0; 0] + l_A * [cos(q(t,3)); 0; -sin(q(t,3))];  
     B1 = v1;
     B2 = R_base(theta(2))*v2;
     B3 = R_base(theta(3))*v3;
