@@ -9,22 +9,10 @@ P_2 = 2*rotz(60)*P2;
 P_3 = 2*rotz(60)*P3;
 
 axis_lim = 5;
-grid on 
-axis([-axis_lim axis_lim -axis_lim axis_lim -axis_lim axis_lim]);
 
-hold on
-% disegno del piatto superiore
-% line([P1(1) P2(1)],[P1(2) P2(2)],[P1(3) P2(3)]);
-% line([P2(1) P3(1)],[P2(2) P3(2)],[P2(3) P3(3)]);
-% line([P1(1) P3(1)],[P1(2) P3(2)],[P1(3) P3(3)]);
-line([P_1(1) P_2(1)],[P_1(2) P_2(2)],[P_1(3) P_2(3)]);
-line([P_2(1) P_3(1)],[P_2(2) P_3(2)],[P_2(3) P_3(3)]);
-line([P_1(1) P_3(1)],[P_1(2) P_3(2)],[P_1(3) P_3(3)]);
-
-plot3(P1(1), P1(2), P1(3), 'or');
-plot3(P2(1), P2(2), P2(3), 'or');
-plot3(P3(1), P3(2), P3(3), 'or');
-
+% parametri giunto sferico
+sx = 0.2;
+sy = 0.2;
 
 t_final = size(q);
 time = 0;
@@ -66,19 +54,36 @@ for t = 1:t_final
     B1 = v1;
     B2 = R_base(theta(2))*v2;
     B3 = R_base(theta(3))*v3;
+    
     line([P1(1) B1(1)],[P1(2) B1(2)],[P1(3) B1(3)], 'Color',[.1 .8 .1]);
     line([P2(1) B2(1)],[P2(2) B2(2)],[P2(3) B2(3)], 'Color',[.1 .8 .1]);
     line([P3(1) B3(1)],[P3(2) B3(2)],[P3(3) B3(3)], 'Color',[.1 .8 .1]);
     
     %disegno dei giunti sferici tra spalla e avambraccio     
-    plot3(B1(1), B1(2), B1(3), 'or');
-    plot3(B2(1), B2(2), B2(3), 'or');
-    plot3(B3(1), B3(2), B3(3), 'or');
+    plot3(B1(1) - sx, B1(2) - sy, B1(3), 'or');
+    plot3(B1(1) + sx, B1(2) + sy, B1(3), 'or');
+    
+    plot3(B2(1) - sx, B2(2) - sy, B2(3), 'or');
+    plot3(B2(1) + sx, B2(2) + sy, B2(3), 'or');
+    
+    plot3(B3(1) - sx, B3(2) - sy, B3(3), 'or');
+    plot3(B3(1) + sx, B3(2) + sy, B3(3), 'or');
+    
+    line([B1(1) + sx B1(1) - sx],[B1(2) + sy B1(2) - sy],[B1(3) B1(3)], 'Color',[.1 .8 .1]);
+    line([B2(1) + sx B2(1) - sx],[B2(2) + sy B2(2) - sy],[B2(3) B2(3)], 'Color',[.1 .8 .1]);
+    line([B3(1) + sx B3(1) - sx],[B3(2) + sy B3(2) - sy],[B3(3) B3(3)], 'Color',[.1 .8 .1]);
+    
+   
     
     %disegno avambraccio ee-> end effector     
-    line([ee(t,1) B1(1)],[ee(t,2) B1(2)],[ee(t,3) B1(3)], 'Color',[.1 .8 .1]);
-    line([ee(t,1) B2(1)],[ee(t,2) B2(2)],[ee(t,3) B2(3)], 'Color',[.1 .8 .1]);
-    line([ee(t,1) B3(1)],[ee(t,2) B3(2)],[ee(t,3) B3(3)], 'Color',[.1 .8 .1]);
+    line([ee(t,1) - sx B1(1) - sx],[ee(t,2) - sy B1(2) - sy],[ee(t,3) B1(3)], 'Color',[.1 .8 .1]);
+    line([ee(t,1) + sx B1(1) + sx],[ee(t,2) + sy B1(2) + sy],[ee(t,3) B1(3)], 'Color',[.1 .8 .1]);
+    
+    line([ee(t,1) - sx B2(1) - sx],[ee(t,2) - sy B2(2) - sy],[ee(t,3) B2(3)], 'Color',[.1 .8 .1]);
+    line([ee(t,1) + sx B2(1) + sx],[ee(t,2) + sy B2(2) + sy],[ee(t,3) B2(3)], 'Color',[.1 .8 .1]);
+    
+    line([ee(t,1) - sx B3(1) - sx],[ee(t,2) - sy B3(2) - sy],[ee(t,3) B3(3)], 'Color',[.1 .8 .1]);
+    line([ee(t,1) + sx B3(1) + sx],[ee(t,2) + sy B3(2) + sy],[ee(t,3) B3(3)], 'Color',[.1 .8 .1]);
     
     %disegno end effector    
     plot3(ee(t,1), ee(t,2), ee(t,3), 'dr');

@@ -8,7 +8,7 @@ function [theta, R, m_b, m_br, l_A, r_Gb, m_fb, l_B, m_n, m_nt, I_bi] = Paramete
 % Adimensional parameters for a regular shape of the working volume. From
 % [2] pg. 405
 % r_l = R/lA
-r_l = 0.63; % VERIFICA
+r_l = 1; % VERIFICA
 % b = l_B/l_A
 b = 2; % VERIFICA
 
@@ -19,7 +19,7 @@ m_fb = 0.2; % [Kg] Forearms mass
 r_m = 2/3; % Ratio of forearm mass at upper extremis
 m_br = m_b + m_c + r_m*m_fb; 
 
-l_A = 1; % [m] Upper arms length
+l_A = 2; % [m] Upper arms length
 l_B = b*l_A; % [m] Forearms length
 r_Gb = l_A*(0.5*m_b + m_c + r_m*m_fb)/m_br; % center of the mass of upper arms
 
