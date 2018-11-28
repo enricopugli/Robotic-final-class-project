@@ -22,9 +22,9 @@ G_b = m_br*[0; 0; -9.81];
 
 % tau_b =  r_Gb*[ cos(theta(1)); cos(theta(2)); -m_br*9.8*cos(theta(3))];
 
-tau_b =  r_Gb*[ cos(q(1)); cos(q(2)); -m_br*9.81*cos(q(3))];
+tau_Gb =  r_Gb*9.81*m_br*[ cos(q(1)); cos(q(2)); cos(q(3))];
 
-G = (J'*G_n + tau_b)
+G = (J'*G_n + tau_Gb);
 
 end
 
