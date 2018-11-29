@@ -39,6 +39,7 @@ for t = 1:t_final
     hold on
     
     plot3(ee(1:t,1), ee(1:t,2), ee(1:t,3), 'r'); 
+    plot3(ee_r(1:t,1), ee_r(1:t,2), ee_r(1:t,3), 'b');
     
     line([0 1],[0 0],[0 0], 'Color',[.5 0 0]);
     line([0 0],[0 1],[0 0], 'Color',[0 .5 0]);
@@ -80,9 +81,11 @@ for t = 1:t_final
     line([ee(t,1) B2(1)],[ee(t,2) B2(2)],[ee(t,3) B2(3)], 'Color',[.1 .8 .1]);
     line([ee(t,1) B3(1)],[ee(t,2) B3(2)],[ee(t,3) B3(3)], 'Color',[.1 .8 .1]);
     
-    %disegno end effector    
+    % disegno end effector    
     plot3(ee(t,1), ee(t,2), ee(t,3), 'dr');
-    
+    % Disegno traiettoria di riferimento    
+    plot3(ee_r(t,1), ee_r(t,2), ee_r(t,3), 'db');
+
 %     toc;
 %     pause(0.15 - toc);
 %     cla
