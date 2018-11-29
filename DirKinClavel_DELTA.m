@@ -1,7 +1,7 @@
 % Reference:
 % Clavel, R. (1991). Conception d’un robot parallele rapide à 4 degres de liberté.
 
-q = pi/4 * ones(3,1);
+q = 0 * ones(3,1);
 
 [theta, R, m_b, m_br, l_A, r_Gb, m_fb, l_B, m_n, m_nt, I_bi] = Parameters_DELTA;
 
