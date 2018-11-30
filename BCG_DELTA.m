@@ -1,4 +1,4 @@
-function [B, C, G] = BCG_DELTA(ee, q)
+function [B, C, G, F] = BCG_DELTA(ee, q)
 %UNTITLED6 Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -25,6 +25,7 @@ G_b = m_br*[0; 0; -9.81];
 tau_Gb =  r_Gb*9.81*m_br*[ cos(q(1)); cos(q(2)); cos(q(3))];
 
 G = (J'*G_n + tau_Gb);
+F = 0.6;
 
 end
 
