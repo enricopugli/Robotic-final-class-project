@@ -46,9 +46,13 @@ grid on
 
 % genera il poliedro di inviluppo della point cloud trovata
 figure
-S = alphaShape(p_out, .05); 
+alphaRadius  = .2;
+S = alphaShape(p_out, alphaRadius); 
 plot(S);
 
 % Salvataggio dati:
+alpha_shape_WS = S;
+point_cloud_WS = p_out;
+convex_region_WS = k;
 filename = 'loadvar_DeltaWS';
-save(filename, 'S', 'p_out', 'k');
+save(filename, 'alpha_shape_WS', 'point_cloud_WS', 'convex_region_WS');

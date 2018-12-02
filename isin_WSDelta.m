@@ -7,8 +7,8 @@ function bool = isin_WSDelta(ee)
         ee = ee';
     end 
        
-    load('loadvar_DeltaWS.mat', 'S');
+    load('loadvar_DeltaWS.mat', 'alpha_shape_WS');
     
-    bool = inShape(S, ee);
+    bool = inShape(alpha_shape_WS, ee);
 
 end
