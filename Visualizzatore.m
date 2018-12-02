@@ -8,7 +8,7 @@ P_1 = 2*rotz(60)*P1;
 P_2 = 2*rotz(60)*P2;
 P_3 = 2*rotz(60)*P3;
 
-axis_lim = 5;
+axis_lim = .6;
 grid on 
 axis([-axis_lim axis_lim -axis_lim axis_lim -axis_lim axis_lim]);
 
@@ -41,9 +41,9 @@ for t = 1:t_final
     plot3(ee(1:t,1), ee(1:t,2), ee(1:t,3), 'r'); 
     plot3(ee_r(1:t,1), ee_r(1:t,2), ee_r(1:t,3), 'b');
     
-    line([0 1],[0 0],[0 0], 'Color',[.5 0 0]);
-    line([0 0],[0 1],[0 0], 'Color',[0 .5 0]);
-    line([0 0],[0 0],[0 1], 'Color',[0 0 .5]);
+    line([0 R/2],[0 0],[0 0], 'Color',[.5 0 0]);
+    line([0 0],[0 R/2],[0 0], 'Color',[0 .5 0]);
+    line([0 0],[0 0],[0 R/2], 'Color',[0 0 .5]);
    
     % disegno del piatto superiore
 %     line([P1(1) P2(1)],[P1(2) P2(2)],[P1(3) P2(3)]);
