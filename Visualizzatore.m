@@ -10,7 +10,7 @@ P_3 = 2*rotz(60)*P3;
 
 axis_lim = .6;
 grid on 
-axis([-axis_lim axis_lim -axis_lim axis_lim -axis_lim axis_lim]);
+axis([-axis_lim axis_lim -axis_lim a1xis_lim -axis_lim axis_lim]);
 
 hold on
 % disegno del piatto superiore
