@@ -89,7 +89,7 @@ for t = 1:t_final
 %     toc;
 %     pause(0.15 - toc);
 %     cla
-    pause(0.01);
+    pause(0.1);
     cla;
 %     dt = toc;
 %     time = time + dt;
