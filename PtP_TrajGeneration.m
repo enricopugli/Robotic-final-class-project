@@ -13,12 +13,12 @@ param_traj = nan(4,3);
 
 for i=1:3
     
-    c = [q_in(i); q_end(i); v_in(i); v_end(i)];
+    c = [q_in(i); v_in(i); q_end(i); v_end(i)];
 
     A = [0,    0,    0,   1;
          0,    0,    1,   0;
          tf^3, tf^2, tf,  1;
-         3*tf, 2*tf, 1,   0];
+         3*tf^2, 2*tf, 1,   0];
 
     param_traj(:,i) = A\c; 
 
