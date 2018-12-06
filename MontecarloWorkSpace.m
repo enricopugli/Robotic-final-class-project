@@ -2,8 +2,8 @@
 close all
 clear p_out
 
-pi = [-.4; -.4; -.6];
-pf = [.8; .8; .6];
+p_i = [-.4; -.4; -.6];
+p_f = [.8; .8; .6];
 
 j = 1;
 
@@ -12,7 +12,7 @@ n_run = 100000;
 tic
 for i = 1:n_run
    
-    p = pi + rand(3,1).*pf;
+    p = p_i + rand(3,1).*p_f;
     
     q = InvKin_DELTA(p);
     
