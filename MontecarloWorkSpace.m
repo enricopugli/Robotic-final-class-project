@@ -1,6 +1,6 @@
 % Run montecarlo run over a cartesian 3D space to identify Delta Workspace
 close all
-clear all
+clear p_out
 
 pi = [-.4; -.4; -.6];
 pf = [.8; .8; .6];
@@ -31,12 +31,14 @@ axis([-axis_lim axis_lim -axis_lim axis_lim -axis_lim axis_lim]);
 
 shrink = 0; % Fattore di contrazione dell'inviluppo s in [0,1] 
 
-% Individua una superficie approssimata contenente i punti di p_out
+% Individua una superficie approssimata triangolarizzata contenente i punti
+% di p_out come vertici dei triangoli di superficie approssimata.
+
 [k,v] = boundary(p_out,shrink);
 hold on
 grid on
 
-% Plotta la superficie dei triangoli in k
+% Plotta la superficie dei triangoli contenuti in k
 trisurf(k,p_out(:,1),p_out(:,2),p_out(:,3),'Facecolor','red','FaceAlpha',0.1) 
 
 figure
