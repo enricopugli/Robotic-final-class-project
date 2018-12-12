@@ -18,14 +18,15 @@ b = 2;
 % Arms parameters
 syms m_b; % [kg] Upper arms mass
 syms m_c; % [Kg] Elbow mass
-syms m_fb; % [Kg] Forearms mass
-syms r_m; % Ratio of forearm mass at upper extremis
+% syms m_fb; % [Kg] Forearms mass
+% syms r_m; % Ratio of forearm mass at upper extremis
+syms mfb_rm; % Tmp sym parameter
 
-m_br = m_b + m_c + r_m*m_fb; 
+m_br = m_b + m_c + mfb_rm; 
 
 l_A = 0.2; % [m] Upper arms length
 l_B = b*l_A; % [m] Forearms length
-r_Gb = l_A*(0.5*m_b + m_c + r_m*m_fb)/m_br; % center of the mass of upper arms
+r_Gb = l_A*(0.5*m_b + m_c + mfb_rm)/m_br; % center of the mass of upper arms
 
 % Base plate parameters
 R = r_l*l_A;
@@ -36,7 +37,7 @@ syms m_p; % [Kg] payload mass
 
 % Travelling plate parameters
 syms m_n; % [Kg] 
-m_nt = m_n + m_p + 3*(1-r_m*m_fb); % [Kg] total mass contribute of the travelling plate
+m_nt = m_n + m_p + 3*(1-mfb_rm); % [Kg] total mass contribute of the travelling plate
 
 % Motors parameters
 k_r = 1; % Gear reduction ratio
@@ -44,7 +45,7 @@ k_r = 1; % Gear reduction ratio
 % Inertia 
 I_m = 0; % [Kg*m^2] Inertia of the motor
 I_brake = 0; % [Kg*m^2] Inertia of the motor
-I_bc = l_A^2*(m_b/3 + m_c + r_m*m_fb); % [Kg*m^2] Inertia of the arm
+I_bc = l_A^2*(m_b/3 + m_c + mfb_rm); % [Kg*m^2] Inertia of the arm
 I_bi = (I_m + I_brake)*k_r^2 + I_bc; % [Kg*m^2] Total inertia contribution of each upper arm
 % 
 I_b = diag([I_bi, I_bi, I_bi]);
