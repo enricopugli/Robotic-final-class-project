@@ -91,7 +91,11 @@ for i = 1:3
 
 end
 
-matlabFunction(Y,'File','Regressor_function','Vars',{q, dq, ddq, ee,[m_b m_c mfb_rm m_n m_p F]});
+fprintf('\nStarted creating Regressor function\n');
+tic
+matlabFunction(Y,'File','Regressor_function','Vars',[q, dq, ddq, ee]);
+toc
+fprintf('\nEnded Regressor function creation\n');
 
 clear C1 C2 C3 C4 C5 C6 
 clear c1 c2 c3 c4 c5 c6 
