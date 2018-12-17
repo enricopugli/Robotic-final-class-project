@@ -35,7 +35,7 @@ m_p = 0; % [Kg] payload mass
 
 % Travelling plate parameters
 m_n = .1; % [Kg] 
-m_nt = m_n + m_p + 3*(1-r_m*m_fb); % [Kg] total mass contribute of the travelling plate
+m_nt = m_n + m_p + 3*(1-r_m)*m_fb; % [Kg] total mass contribute of the travelling plate
 
 % Motors parameters
 k_r = 1; % Gear reduction ratio

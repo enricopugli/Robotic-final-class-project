@@ -1,11 +1,102 @@
 %!TEX root = ../main.tex
 %
 \section[Delta robot]{Delta robot}
+\subsection{Direct kinematic}
+\begin{frame}
+\frametitle{Delta robot - Direct kinematic}
+	\begin{figure}
+		\includegraphics[width=.5\linewidth]{img/DeltaRobotClavelpg26.JPG}
+	\end{figure}
+\end{frame}
 %
+\begin{frame}
+\frametitle{Delta robot - Direct kinematic}
+	$C_i$ coordinates are given by the intersection of three circles of radius $L_A$ belonging to the plane $\pi_i$ and the sphere centered in $P$ having radius $L_B$.
+	\[
+	C_i =%
+	\begin{pmatrix}
+		(R + L_Acos\alpha_i)cos\theta_i\\
+		(R + L_Acos\alpha_i)sin\theta_i\\
+		-L_Asin\alpha_i
+	\end{pmatrix}
+	\]
+	%
+	Equation of the sphere centered in P:
+	\begin{equation}
+		(x - p_x)^2 + (y - p_y)^2 + (z - p_z)^2 = L_B
+	\end{equation}
+	%
+	\begin{equation}
+		((R + L_Acos\alpha_i)cos\theta_i - x^2) + ((R + L_Acos\alpha_i)sin\theta_i - y)^2 + (L_Asin\alpha_i + z)^2 = L_B^2
+	\end{equation}
+
+\end{frame}
 \begin{frame}
 	\frametitle{Delta robot - Direct kinematic}
 	\begin{align}
-		D_i &= R^2+2\,\cos\left(q_{i}\right)\,R\,l_{A}+{l_{A}}^2-{l_{B}}^2\\
-		E_i &= \cos\left(\theta _{i}\right)\,\left(2\,R+2\,l_{A}\,\cos\left(q_{i}\right)\right)
+		D_i &= R^2+2\,\cos\,q_{i}\,R\,l_{A}+{l_{A}}^2-{l_{B}}^2\\
+		E_i &= \cos\theta _{i}\,\left(2\,R+2\,l_{A}\,\cos\,q_{i}\right)\\
+		F_i &= \sin\theta _{i}\,\left(2\,R+2\,l_{A}\,\cos\,q_{i}\right)\\
+		G_i &= -2\,l_{A}\,\sin\left(q_{i}\right)
 	\end{align}
+%
+	\begin{align}
+		H_1 &= E_{1}\,G_{2}-E_{2}\,G_{1}-E_{1}\,G_{3}+E_{3}\,G_{1}+E_{2}\,G_{3}-E_{3}\,G_{2}\\
+		H_2 &= E_{2}\,F_{1}-E_{1}\,F_{2}+E_{1}\,F_{3}-E_{3}\,F_{1}-E_{2}\,F_{3}+E_{3}\,G_{2}\\
+		H_3 &= D_{1}\,E_{2}-D_{1}\,E_{1}-D_{1}\,E_{3}+D_{3}\,E_{1}+D_{2}\,E_{3}-D_{3}\,E_{2}\\
+		H_4 &= D_{2}\,F_{1}-D_{1}\,F_{2}+D_{1}\,F_{3}-D_{3}\,F_{1}-D_{2}\,F_{3}+D_{3}\,F_{2}\\
+		H_5 &= F_{2}\,G_{1}-F_{1}\,G_{2}+F_{1}\,G_{3}-F_{3}\,G_{1}-F_{2}\,G_{3}+F_{3}\,G_{2}
+	\end{align}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Delta robot - Direct kinematic}
+	\begin{align}
+		L &= \frac{{H_{1}}^2+{H_{5}}^2}{{H_{2}}^2}+1\\
+		M &= G_{1}-\frac{E_{1}\,H_{5}+F_{1}\,H_{1}}{H_{2}}+\frac{2\,H_{1}\,H_{3}+2\,H_{4}\,H_{5}}{{H_{2}}^2}\\
+		N &= D_{1}-\frac{E_{1}\,H_{4}+F_{1}\,H_{3}}{H_{2}}+\frac{2\,{H_{3}}^2+2\,{H_{4}}^2}{{H_{2}}^2}
+	\end{align}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Delta robot - Direct kinematic}
+End effector coordinates computation:
+	\begin{equation}
+		z_{1,2} = -\frac{M \pm \sqrt{M^2-4\,L\,N}}{2\,L}
+	\end{equation}
+	%
+	Among the two solutions we pick the one with lower height that belongs to the Delta robot workspace.
+	%
+	\begin{align}
+		x &= \frac{H_{4}}{H_{2}}-\frac{H_{5}\,\left(M-\sqrt{M^2-4\,L\,N}\right)}{2\,H_{2}\,L}\\
+		y &= \frac{H_{3}}{H_{2}}-\frac{H_{1}\,\left(M-\sqrt{M^2-4\,L\,N}\right)}{2\,H_{2}\,L}
+	\end{align}
+\end{frame}
+%
+\subsection{Inverse kinematic}
+\begin{frame}
+	\frametitle{Delta robot - Inverse kinematic}
+	\begin{align}
+		A &= {L_{A}}^2-{L_{B}}^2-R^2+{x_{i}}^2+{y_{i}}^2+{z_{i}}^2\\
+		B &= 2x_{i}-2R
+	\end{align}
+	%
+	\begin{equation}
+		z = \frac{A - Bx}{2\,z_{i}}
+	\end{equation}
+	%
+	where:
+	\begin{equation}
+		x = \frac{b+\sqrt{b^2-a\,c}}{a}
+	\end{equation}
+	with:
+	\begin{align}
+		a &= {\left(2\,R-2\,x_{i}\right)}^2+4\,{z_{i}}^2\\
+		b &= 4\,R\,{z_{i}}^2 + A\,B\\
+		c &= A^2 - 4\,{L_{A}}^2\,{z_{i}}^2+4\,R^2\,{z_{i}}^2
+	\end{align}
+	%
+	\begin{equation}
+		q_i = -\mathrm{asin}\left(\frac{z}{L_{A}}\right)
+	\end{equation}
 \end{frame}
