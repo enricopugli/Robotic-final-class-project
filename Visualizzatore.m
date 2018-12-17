@@ -8,9 +8,10 @@ P_1 = 2*rotz(60)*P1;
 P_2 = 2*rotz(60)*P2;
 P_3 = 2*rotz(60)*P3;
 
-axis_lim = .6;
+axis_lim = .1;
+axis_lim_ = -.5;
 grid on 
-axis([-axis_lim axis_lim -axis_lim axis_lim -axis_lim axis_lim]);
+axis([-.3 .3 -.3 .3 axis_lim_ axis_lim]);
 
 hold on
 % disegno del piatto superiore
@@ -30,10 +31,10 @@ t_final = size(q);
 time = 0;
 % disegno delle braccia
 % disegno delle spalle
-for t = 1:t_final
+for t = 1:100:t_final
 %     tic;
     grid on 
-    axis([-axis_lim axis_lim -axis_lim axis_lim -axis_lim axis_lim]);
+    axis([-.3 .3 -.3 .3 axis_lim_ axis_lim]);
 
 
     hold on
