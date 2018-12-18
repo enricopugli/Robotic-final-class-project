@@ -1,6 +1,4 @@
 function [B, C, G, F] = BCG_DELTA(ee, q)
-%UNTITLED6 Summary of this function goes here
-%   Detailed explanation goes here
 
 [~, ~, ~, m_br, ~, r_Gb, ~, ~, ~, m_nt, I_bi] = Parameters_DELTA;
 
