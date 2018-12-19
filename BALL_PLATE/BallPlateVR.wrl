@@ -4,6 +4,9 @@ DEF Ball Transform {
   translation 0 0 0.01
   children Shape {
     appearance Appearance {
+      texture ImageTexture {
+        url "*sl3dlib/objects/Textures/Space/Earth_4096x2048.png" 
+      }
       material Material {
         diffuseColor 0.58431 0.152941 0.117647
       }
