@@ -1,6 +1,10 @@
 %!TEX root = ../main.tex
 %
 \section[Delta robot]{Delta robot}
+\begin{frame}
+
+\end{frame}
+
 \subsection{Direct kinematic}
 \begin{frame}
 \frametitle{Delta robot - Direct kinematic}
@@ -98,5 +102,13 @@ End effector coordinates computation:
 	%
 	\begin{equation}
 		q_i = -\mathrm{asin}\left(\frac{z}{L_{A}}\right)
+	\end{equation}
+\end{frame}
+%
+\subsection{Jacobian}
+\begin{frame}
+	\frametitle{Delta robot - Jacobian computation}
+	\begin{equation}
+		\left(\begin{array}{c} p-R_{b}\,\left(\overline{R}-L_{A}\,\cos\left(\overline{q_{i}}\right)\right)\\ p\\ p+L_{A}\,R_{b}\,\sin\left(\overline{q_{i}}\right) \end{array}\right)
 	\end{equation}
 \end{frame}

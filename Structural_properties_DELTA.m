@@ -16,5 +16,5 @@ end
 Ob = obsv(A,C);
 
 if rank(Ob) == length(A)
-   fprintf('\nThe linearized system is fully observable, so it is the non-linear system');
+   fprintf('\nThe linearized system is fully observable, so it is the non-linear system\n');
 end 
