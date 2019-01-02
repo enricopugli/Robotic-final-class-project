@@ -5,5 +5,5 @@ for i = 1:length(excitability)
 end    
 
 figure
-plot(eig_excit(1:3,:));
+plot(eig_excit(2,:));
 grid on
