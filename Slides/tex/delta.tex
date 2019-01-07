@@ -2,17 +2,104 @@
 %
 \section[Delta robot]{Delta robot}
 \begin{frame}
-
+\frametitle{Delta robot}
+The Delta robot is a 3-DOF parallel kinematic machine developed by Reymond Clavel~\footfullcite{Clavel1991} in 1991. It mainly consists of three actuated kinematic chains linked at a common moving platform. Each chain is a serial connection of a revolute actuator, a rear-arm and a forearm (composed of two parallel rods forming a parallelogram). The rear-arms and the forearms are linked through ball-and-socket passive joints. The parallelogram structure of the forearms ensures that the moving platform stays always parallel to the fixed base.
+Figure~\ref{Delta_schematic} shows a schematic view of the Delta robot with its main elements highlighted.
 \end{frame}
-
+%
+\begin{frame}
+\frametitle{Delta robot - Schematic view}
+\begin{columns}
+    \begin{column}{0.5\textwidth}
+		\vspace*{.6cm}
+    	\begin{figure}
+    		\frame{\includegraphics[width=.8\linewidth]{img/Delta.png}}
+    		\caption{Schematic view of Delta robot}
+    		\label{Delta_schematic}
+    	\end{figure}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+        \begin{enumerate}
+        	\item Fixed base-plate
+        	\item Actuator
+        	\item Rear-arm
+        	\item Forearm
+        	\item Moving platform
+        \end{enumerate}
+    \end{column}
+\end{columns}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Delta robot - Parameters}
+Analytical studies on the working volume of the Delta robot~\footfullcite{Rey} demonstrated that:
+\begin{itemize}
+ 	\item A ratio $r = R/l_A < 0.63$ gives the most regular shape for the surface of the lower part of the working volume, with $R$ as the distance between the center of the base plate and the rotation axis of the actuator and $l_A$ as the length of the rear-arm.
+ 	\item If $r > 0.0484$ and $b = l_A/l_B > 1.75$ there is no singularity occurrance within the robot working volume.
+\end{itemize}
+Thus the parameters shown in table~\ref{Delta_param} have been chosen for the Delta model used in this project.
+\end{frame}
+%
+\begin{frame}
+\frametitle{Delta robot - Parameters}
+\begin{table}
+\begin{center}
+\begin{tabu} to \textwidth { | X[c] | X[c] | X[c] | }
+	\hline
+	\textbf{Parameter} & \textbf{Description} & \textbf{Value} \\
+	\hline
+	$l_A$ & Rear-arm length & $0.2 m$ \\
+	$m_A$ & Rear-arm mass & $0.1 Kg$ \\
+	$R$ & Base platform parameter & $0.126 m$ \\
+	$l_B$ & Forearm length & $0.4 m$ \\
+	$m_B$ & Forearm mass & $0.045 Kg$ \\
+	$m_c$ & Elbow mass & $0.018 Kg$ \\
+	$m_n$ & Moving platform mass & $0.1 Kg$ \\
+	$I_{bi}$ & Rear-arm inertia & $Kg\times m^2$ \\
+	\hline
+\end{tabu}
+\caption{Delta robot geometric and dynamic parameters}
+\label{Delta_param}
+\end{center}
+\end{table}
+\end{frame}
+%
 \subsection{Direct kinematic}
 \begin{frame}
 \frametitle{Delta robot - Direct kinematic}
-	\begin{figure}
-		\includegraphics[width=.5\linewidth]{img/DeltaRobotClavelpg26.JPG}
-	\end{figure}
+	\begin{columns}
+    \begin{column}{0.48\textwidth}
+        	\begin{figure}
+        		\includegraphics[width=1\linewidth]{img/DeltaRobotClavelpg26.JPG}
+        	\end{figure}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+        %Content
+    \end{column}
+\end{columns}
+
+	% \begin{textblock*}{8cm}(2cm,2cm) % {block width} (coords)
+	% 	\includegraphics[width=.5\linewidth]{img/DeltaRobotClavelpg26.JPG}
+	% \end{textblock*}
+
+	% \begin{figure}
+	% 	\includegraphics[width=.5\linewidth]{img/DeltaRobotClavelpg26.JPG}
+	% \end{figure}
 \end{frame}
 %
+% \begin{frame}{The minipage environment}
+% \begin{minipage}{0.47\textwidth}
+%     \begin{itemize}
+%         \item First item
+%         \item Second item
+%         \item Third item
+%     \end{itemize}
+% \end{minipage}
+% \begin{minipage}{0.5\textwidth}
+%     \rule{\textwidth}{0.75\textwidth}
+% \end{minipage}
+% \end{frame}
+
 \begin{frame}
 \frametitle{Delta robot - Direct kinematic}
 	$C_i$ coordinates are given by the intersection of three circles of radius $L_A$ belonging to the plane $\pi_i$ and the sphere centered in $P$ having radius $L_B$.
