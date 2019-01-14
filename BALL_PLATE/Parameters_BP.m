@@ -12,7 +12,7 @@ I_b = (2/5)*m_b*r_b^2; % [Kg*m^2]
 % Plate
 % Material: alluminium
 d_p = 2700; % density [Kg/m^3]
-l_p = 0.24; % [m]
+l_p = 0.60; % [m] old: 0.24
 h_p = .003; % [m]
 v_p = h_p*l_p^2; % [m^3]
 m_p = v_p*d_p; % [Kg]

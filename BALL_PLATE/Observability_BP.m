@@ -1,4 +1,4 @@
-tic
+
 syms B g;
 
 x = sym('x', [8 1], 'real'); % states
@@ -12,12 +12,12 @@ f = [x(5:8);
 g1 = [0; 0; 0; 0; 0; 0; 1; 0];
 g2 = [0; 0; 0; 0; 0; 0; 0; 1];
 
-%%
-ad_fng1 = liebracket(f,g1,x,7);
+h1 = [x(1), zeros(1,7)];
+h2 = [0, x(2), zeros(1,6)];
 
 %%
-ad_fng2 = liebracket(f,g2,x,7);
+ad_fnh1 = liebracket(f,h1,x,7);
 
 %%
-Q = [ad_fng1, ad_fng2];
+ad_fnh2 = liebracket(f,h2,x,7);
 
