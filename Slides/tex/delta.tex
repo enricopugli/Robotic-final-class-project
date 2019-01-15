@@ -28,7 +28,7 @@ Figure~\ref{fig:Delta_schematic} shows a schematic view of the Delta robot with 
         \end{enumerate}
     \end{column}
 \end{columns}
-We consider a model with a ternary symmetric configuration with three kinematic chains disposed with a period of $120\degree$
+We consider a model with a ternary symmetric configuration with three kinematic chains disposed with a period of $120\degree$.
 \end{frame}
 %
 \begin{frame}
@@ -66,7 +66,7 @@ We consider a model with a ternary symmetric configuration with three kinematic 
 %
 \begin{frame}
 \frametitle{Delta robot - Parameters}
-Analytical studies on the working volume of the Delta robot~\footfullcite{Rey} demonstrated that:
+Analytical studies on the working volume of the Delta robot~\footfullcite{Rey} showed that:
 \begin{itemize}
  	\item A ratio $r = R/l_A < 0.63$ gives the most regular shape for the surface of the lower part of the working volume.
  	\item If $r > 0.0484$ and $b = l_A/l_B > 1.75$ there is no singularity occurrence within the robot working volume.
@@ -224,11 +224,11 @@ We express the dynamic of the delta robot in the classical matrix formulation:
 \end{equation}
 Where:
 \begin{align}
-	M(q) = \left(I_b + m_{nt}J^TJ\right), && C(q,\dot{q}) = \left(J^Tm_ntJ\right), && G(q) = -\Gamma_{Gb} - \Gamma_{Gn}
+	M(q) = \left(I_b + m_{nt}J^TJ\right), && C(q,\dot{q}) = \left(J^Tm_{nt}J\right), && G(q) = -\Gamma_{Gb} - \Gamma_{Gn}
 \end{align}
 \begin{itemize}
 	\item $I_b$ is the inertia matrix of the arms in joint space.
-	\item $m_{nt}$ is the totalling mass acting on the travelling plate.
+	\item $m_{nt}$ is the total mass acting on the travelling plate.
 	\item $J$ is the Jacobian matrix.
 	\item $\Gamma_{Gn}$ is the gravity force acting on the moving platform.
 	\item $\Gamma_{Gb}$ is the gravity force acting on the rear-arms.
