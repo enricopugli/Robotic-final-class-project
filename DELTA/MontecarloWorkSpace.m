@@ -49,7 +49,10 @@ grid on
 % genera il poliedro di inviluppo della point cloud trovata
 figure
 alphaRadius  = .2;
-S = alphaShape(p_out, alphaRadius); 
+S = alphaShape(p_out, alphaRadius);
+xlabel('x');
+xlabel('y');
+xlabel('z');
 plot(S);
 
 % Salvataggio dati:

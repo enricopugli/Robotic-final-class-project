@@ -95,6 +95,52 @@
       \verb http://infoscience.epfl.ch/record/31400
       \endverb
     \endentry
+    \entry{alpha-shape}{article}{}
+      \name{author}{3}{}{%
+        {{hash=a55fcf65023faada4cf5e16fe7060b2f}{%
+           family={Edelsbrunner},
+           family_i={E\bibinitperiod},
+           given={H.},
+           given_i={H\bibinitperiod}}}%
+        {{hash=c7a515cbd2b5ae65a2bf9aa7b266f748}{%
+           family={Kirkpatrick},
+           family_i={K\bibinitperiod},
+           given={D.},
+           given_i={D\bibinitperiod}}}%
+        {{hash=a73dc5db3027189884934132f1118f47}{%
+           family={Seidel},
+           family_i={S\bibinitperiod},
+           given={R.},
+           given_i={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Piscataway, NJ, USA}%
+      }
+      \list{publisher}{1}{%
+        {IEEE Press}%
+      }
+      \strng{namehash}{d36299e1e5f76bb3ba96ec2aae34638e}
+      \strng{fullhash}{d36299e1e5f76bb3ba96ec2aae34638e}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0018-9448}
+      \field{journaltitle}{IEEE Trans. Inf. Theor.}
+      \field{month}{09}
+      \field{number}{4}
+      \field{title}{On the Shape of a Set of Points in the Plane}
+      \field{volume}{29}
+      \field{year}{2006}
+      \field{pages}{551\bibrangedash 559}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1109/TIT.1983.1056714
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1109/TIT.1983.1056714
+      \endverb
+    \endentry
   \endsortlist
 \endrefsection
 \endinput
