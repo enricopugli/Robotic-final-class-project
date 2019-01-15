@@ -36,7 +36,10 @@ time = 0;
 % disegno delle braccia
 % disegno delle spalle
 
-for t = 1:100:t_final
+video = VideoWriter('C:\Users\Dan\Desktop\DeltaRobot\rep_delta\TavoleControlloRobot\Video\VideoDelta\PidPringles.mp4'); %create the video object
+open(video); %open the file for writing
+
+for t = 1:4:t_final
 %     tic;
     grid on 
     axis([-.32 .32 -.32 .32 axis_lim_ axis_lim]);
@@ -91,19 +94,22 @@ for t = 1:100:t_final
     % Disegno traiettoria di riferimento    
     plot3(ee_r(t,1), ee_r(t,2), ee_r(t,3), 'db');
 
-    
+    fig = getframe(gcf);
+    writeVideo(video,fig);
 %     pause(0.001);
-    drawnow limitrate
+    drawnow 
+%     limitrate
     
     if t == 1
-        pause(1)
+        pause(4)
     end
     
-    F(t) = getframe(gcf);
+%     F(t) = getframe(gcf);
     
     cla;
     
 end
 
+close(video); %close the file
 close all
 
