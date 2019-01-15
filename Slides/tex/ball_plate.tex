@@ -71,7 +71,7 @@ Potential energy:
 \begin{frame}
 \frametitle{Ball and plate - Dynamic model}
 %
-After some derivations we find the following non-linear system:
+After some derivations we find the following non-linear system of equations:
 %
 \begin{align}
 	\left(m + \frac{I_b}{r^2}\right)\ddot{x} &- m\left(\dot{\alpha}\dot{\beta}y + \dot{\alpha}^2x\right)+mg\,sin\alpha = 0 \nonumber \\
@@ -79,6 +79,37 @@ After some derivations we find the following non-linear system:
 	\left(I_p + I_b + mx^2\right)\ddot{\alpha} &+ m\left(\ddot{\beta}xy + \dot{\beta}\left(\dot{x}y + x\dot{y}\right) + 2\dot{\alpha}\dot{x}x\right) +mgx\,cos{\alpha} = \tau_\alpha \nonumber \\
 	\left(I_p + I_b + my^2\right)\ddot{\beta} &+ m\left(\ddot{\alpha}xy + \dot{\alpha}\left(\dot{x}y + x\dot{y}\right) + 2\dot{\beta}\dot{y}y\right) +mgy\,cos{\beta} = \tau_\beta \nonumber
 \end{align}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Ball and plate - Dynamic model}
+%
+We express the dynamic in matrix form:
+%
+\begin{equation}
+\begin{aligned}
+M(q) &=%
+\begin{bmatrix}
+	\left(m + \frac{I_b}{r^2}\right) &0 &0 &0\\
+	0 &\left(m + \frac{I_b}{r^2}\right) &0 &0\\
+	0 &0 &\left(I_b + I_p + mx^2\right) &mxy\\
+	0 &0 &mxy &\left(I_b + I_p + my^2\right)
+\end{bmatrix}\\
+C(q,\dot{q}) &=%
+\begin{bmatrix}
+	0 &0 &-\dot{\alpha} x &-\dot{\alpha} y\\
+	0 &0 &-\dot{\beta} x &-\dot{\beta} y\\
+	2\dot{\alpha}x &0 &0 &\left(\dot{x}y+x\dot{y}\right)\\
+	0 &2\dot{\beta}y &\left(\dot{x}y+x\dot{y}\right) &0
+\end{bmatrix}\\
+G(q) &=%
+\begin{bmatrix}
+	mg\,sin\alpha\\
+	mg\,sin\beta\\
+	mgx\,cos\alpha\\
+	mgx\,cos\beta
+\end{bmatrix}
+\end{aligned}
+\end{equation}
 %
 \end{frame}
-
