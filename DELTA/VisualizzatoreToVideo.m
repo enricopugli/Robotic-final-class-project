@@ -39,7 +39,7 @@ time = 0;
 video = VideoWriter('C:\Users\Dan\Desktop\DeltaRobot\rep_delta\TavoleControlloRobot\Video\VideoDelta\PidPringles.mp4'); %create the video object
 open(video); %open the file for writing
 
-for t = 1:4:t_final
+for t = 1:50:t_final
 %     tic;
     grid on 
     axis([-.32 .32 -.32 .32 axis_lim_ axis_lim]);
