@@ -16,5 +16,86 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \sortlist[entry]{none/global}
+    \entry{Clavel1991}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=6e0735afacfa2ee43f70c673ac2d61d6}{%
+           family={Clavel},
+           family_i={C\bibinitperiod},
+           given={Reymond},
+           given_i={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{6e0735afacfa2ee43f70c673ac2d61d6}
+      \strng{fullhash}{6e0735afacfa2ee43f70c673ac2d61d6}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Conception d'un robot parallele rapide à 4 degres de liberté}}
+      \field{year}{1991}
+      \field{pages}{146}
+      \range{pages}{1}
+      \verb{file}
+      \verb :home/enrico/Desktop/Tavole/RiferimentiTavole/DeltaRobot/Articoli/EPFL{\_}TH925.pdf:pdf
+      \endverb
+    \endentry
+    \entry{Rey}{article}{}
+      \name{author}{2}{}{%
+        {{hash=4b0f3cef9c01a9de4d5b0ebfab55d676}{%
+           family={Rey},
+           family_i={R\bibinitperiod},
+           given={L},
+           given_i={L\bibinitperiod}}}%
+        {{hash=6e0735afacfa2ee43f70c673ac2d61d6}{%
+           family={Clavel},
+           family_i={C\bibinitperiod},
+           given={Reymond},
+           given_i={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{b6f5b2a79c0e01a8853a3f3db5a094a8}
+      \strng{fullhash}{b6f5b2a79c0e01a8853a3f3db5a094a8}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Parallel Kinematic Machines. Advanced Manufacturing. Springer, London}
+      \field{title}{{The Delta Parallel Robot}}
+      \field{year}{1999}
+    \endentry
+    \entry{Codourey_thesis}{article}{}
+      \name{author}{1}{}{%
+        {{hash=3e6659c426cea0a5c8a89b0d55936246}{%
+           family={Codourey},
+           family_i={C\bibinitperiod},
+           given={Alain},
+           given_i={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Lausanne}%
+      }
+      \list{publisher}{1}{%
+        {EPFL}%
+      }
+      \strng{namehash}{3e6659c426cea0a5c8a89b0d55936246}
+      \strng{fullhash}{3e6659c426cea0a5c8a89b0d55936246}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Contribution à la commande des robots rapides et précis application au robot delta à entraînement direct}}
+      \field{year}{1991}
+      \field{pages}{188}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.5075/epfl-thesis-922
+      \endverb
+      \verb{url}
+      \verb http://infoscience.epfl.ch/record/31400
+      \endverb
+    \endentry
+  \endsortlist
+\endrefsection
 \endinput
 

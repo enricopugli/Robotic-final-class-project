@@ -1,9 +1,9 @@
 %!TEX root = ../main.tex
 %
 % PREAMBLE
-\documentclass[12pt, italian]{beamer}
+\documentclass[10pt, english]{beamer}
 \usetheme{metropolis}
-\usepackage[italian]{babel}
+\usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 
 % \usepackage{booktabs}
@@ -12,11 +12,19 @@
 % \usepgfplotslibrary{dateplot}
 % \usemintedstyle{trac}
 
+% Graphics
+\usepackage[absolute,overlay]{textpos}
+\usepackage[font=scriptsize,labelfont=bf]{caption}
+\usepackage{tabu}
+
 % Bibliography
 \usepackage{multimedia}
-
+\usepackage{csquotes}
 \usepackage[backend=biber,style=numeric-comp,sorting=none]{biblatex}
 \addbibresource{bib/biblio.bib}
+
+%characters
+\usepackage{gensymb}
 
 %% Title frame information
 \title{Tavole applicative}
