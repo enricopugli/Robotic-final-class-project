@@ -111,9 +111,12 @@ Equation of the sphere centred in P:
 % 	(x - p_x)^2 + (y - p_y)^2 + (z - p_z)^2 = L_B
 % \end{equation}
 %
-\begin{equation}
-	((R + L_Acos\alpha_i)cos\theta_i - x^2) + ((R + L_Acos\alpha_i)sin\theta_i - y)^2 + (L_Asin\alpha_i + z)^2 = L_B^2
-\end{equation}
+\small
+\begin{multline}
+	\left(\left(R + L_Acos\alpha_i\right)cos\theta_i - x^2\right) + \left(\left(R + L_Acos\alpha_i\right)sin\theta_i - y\right)^2\\
+	+ \left(L_Asin\alpha_i + z\right)^2 = L_B^2
+\end{multline}
+\normalsize
 The system has two possible solutions. The one with negative $z$ coordinate that belongs to the Delta robot workspace is selected.
 \end{frame}
 %
