@@ -74,17 +74,27 @@ Analytical studies on the working volume of the Delta robot~\footfullcite{Rey} d
 Thus the parameters shown in table~\ref{tab:Delta_param} have been chosen for the Delta model used in this project.
 \end{frame}
 %
+\begin{frame}
+\frametitle{Delta robot - Reference system and state variables}
+The position of the End-effector
+\[
+(x,y,z)^T
+\]
+is described in a reference frame fixed to the base plate, as shown in figure~\ref{fig:Delta_param}.\\
+\vspace{.5cm}
+The joint variables $\alpha_i$ have been selected as state-variables to describe the robot dynamic:
+\[
+q = (\alpha_1, \alpha_2, \alpha_3)^T
+\]
+
+\end{frame}
+%
 \subsection{Direct kinematic}
 %
 \begin{frame}
 \frametitle{Delta robot - Direct kinematic}
 Since the moving platform is only translating we can study the model in figure~\ref{fig:Delta_param} without loss of generality.\\
 In this model the moving platform is reduced to an ideal point with a translation of the three kinematic chains.
-\end{frame}
-%
-\begin{frame}
-\frametitle{Delta robot - Direct kinematic}
-Scelta del sistema di riferimento, variabili.
 \end{frame}
 %
 \begin{frame}
@@ -112,10 +122,9 @@ Equation of the sphere centred in P:
 % \end{equation}
 %
 \small
-\begin{multline}
-	\left(\left(R + L_Acos\alpha_i\right)cos\theta_i - x^2\right) + \left(\left(R + L_Acos\alpha_i\right)sin\theta_i - y\right)^2\\
-	+ \left(L_Asin\alpha_i + z\right)^2 = L_B^2
-\end{multline}
+\begin{equation}
+	\left(\left(R + L_Acos\alpha_i\right)cos\theta_i - x^2\right) + \left(\left(R + L_Acos\alpha_i\right)sin\theta_i - y\right)^2 + \left(L_Asin\alpha_i + z\right)^2 = L_B^2
+\end{equation}
 \normalsize
 The system has two possible solutions. The one with negative $z$ coordinate that belongs to the Delta robot workspace is selected.
 \end{frame}
@@ -208,19 +217,38 @@ The rationale is still the intersection of a sphere and three circles but the co
 \end{frame}
 %
 \begin{frame}
-	\frametitle{Delta robot - Dynamic model}
-	\begin{equation}
-		\left(\begin{array}{c} p-R_{b}\,\left(\overline{R}-L_{A}\,\cos\left(\overline{q_{i}}\right)\right)\\ p\\ p+L_{A}\,R_{b}\,\sin\left(\overline{q_{i}}\right) \end{array}\right)
-	\end{equation}
-\end{frame}
-%
-\begin{frame}
-	\frametitle{Delta robot - Dynamic model}
+\frametitle{Delta robot - Dynamic model}
+We express the dynamic of the delta robot in the classical matrix formulation:
+\begin{equation}
+	\tau = M(q)\ddot{q} + C(q,\dot{q})\dot{q} + G(q)
+\end{equation}
+Where:
+\begin{align}
+	M(q) = \left(I_b + m_{nt}J^TJ\right), && C(q,\dot{q}) = \left(J^Tm_ntJ\right), && G(q) = -\Gamma_{Gb} - \Gamma_{Gn}
+\end{align}
+\begin{itemize}
+	\item $I_b$ is the inertia matrix of the arms in joint space.
+	\item $m_{nt}$ is the totalling mass acting on the travelling plate.
+	\item $J$ is the Jacobian matrix.
+	\item $\Gamma_{Gn}$ is the gravity force acting on the moving platform.
+	\item $\Gamma_{Gb}$ is the gravity force acting on the rear-arms.
+\end{itemize}
 \end{frame}
 %
 \subsection{Working volume}
 \begin{frame}
-	\frametitle{Delta robot - Working volume}
+\frametitle{Delta robot - Working volume}
+\begin{figure}
+	\frame{\includegraphics[width=.95\linewidth]{img/WorkSpaceDelta.eps}}
+	\caption{A convex hull of the workspace of the Delta robot}
+	\label{fig:Delta_WS}
+\end{figure}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Delta robot - Working volume}
+In figure~\ref{fig:Delta_WS} a covex hull of the workspace of the Delta robot is reported. The surface has been generated as an $\alpha-shape$ \footfullcite{alpha-shape} with $r_\alpha = 0.2$.\\
+The geometric figure gives an analytical instrument to validate a sound reference trajectory generation for the Delta kinematic.
 \end{frame}
 %
 \subsection{Control}
