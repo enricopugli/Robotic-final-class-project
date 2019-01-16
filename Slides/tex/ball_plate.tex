@@ -136,10 +136,30 @@ Where
 \[x = (x_b, y_b, \alpha, \beta, \dot{x_b}, \dot{y_b}, \dot{\alpha}, \dot{\beta})^T\]
 \end{frame}
 %
+\begin{frame}
+\frametitle{Ball and plate - Dynamic model}
+    Change of coordiante
+\end{frame}
+%
 \subsection{Structural properties}
 \subsubsection{Controllability}
 \begin{frame}
 \frametitle{Controllability}
+\begin{equation}
+	Q =%
+	\begin{pmatrix}
+		0 &0 &\star &\star &\star &\star &\star &\star &0 &0 &0 &0 &0 &0 &0 &0 \\
+		0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &\star &\star &\star &\star &\star &\star \\
+		0 &1 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 \\
+		0 &0 &0 &0 &0 &0 &0 &0 &0 &1 &0 &0 &0 &0 &0 &0 \\
+		0 &\star &\star &\star &\star &\star &\star &\star &0 &0 &0 &0 &0 &0 &0 &0 \\
+		0 &0 &0 &0 &0 &0 &0 &0 &0 &\star &\star &\star &\star &\star &\star &\star \\
+		1 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 \\
+		0 &0 &0 &0 &0 &0 &0 &0 &1 &0 &0 &0 &0 &0 &0 &0
+	\end{pmatrix}
+\end{equation}
+Where hte $\star$ elements represent the non constant terms of the $Q$ matrix.
+
 \end{frame}
 %
 \subsubsection{Observability}
