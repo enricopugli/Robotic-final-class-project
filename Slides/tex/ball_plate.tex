@@ -116,7 +116,7 @@ G(q) &=%
 \begin{frame}
 \frametitle{Ball and plate - Dynamic model}
 %
-Affine-in-control formulation:
+\textbf{Affine-in-control formulation}:
 \begin{equation}
 	\dot{x} =%
 	\begin{pmatrix}
@@ -138,28 +138,64 @@ Where
 %
 \begin{frame}
 \frametitle{Ball and plate - Dynamic model}
-    Change of coordiante
+\textbf{Change of coordinates}:
+\begin{align}
+	u_1 = 2mx\dot{x}\dot{\alpha} - mgx\,cos\alpha - \left(I_p + I_b + mx^2\right)\ddot{\alpha} - m\dot{\beta}\left(\dot{x}y + \dot{y}x\right) - 2m\dot{\alpha}\dot{x}x \nonumber \\
+	u_2 = 2my\dot{y}\dot{\beta} - mgy\,cos\beta - \left(I_p + I_b + my^2\right)\ddot{\beta} - m\dot{\alpha}\left(\dot{x}y + \dot{y}x\right) - 2m\dot{\beta}\dot{y}y \nonumber \\
+\end{align}
 \end{frame}
 %
 \subsection{Structural properties}
 \subsubsection{Controllability}
 \begin{frame}
 \frametitle{Controllability}
+Chow theorem.
+\end{frame}
+\begin{frame}
+\frametitle{Controllability}
 \begin{equation}
-	Q =%
+	Q(x) =%
 	\begin{pmatrix}
-		0 &0 &\star &\star &\star &\star &\star &\star &0 &0 &0 &0 &0 &0 &0 &0 \\
-		0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &\star &\star &\star &\star &\star &\star \\
-		0 &1 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 \\
-		0 &0 &0 &0 &0 &0 &0 &0 &0 &1 &0 &0 &0 &0 &0 &0 \\
+		0 &0  &\star &\star &\star &\star &\star &\star &0 &0 &0 &0 &0 &0 &0 &0 \\
+		0 &0  &0 &0 &0 &0 &0 &0 &0 &0 &\star &\star &\star &\star &\star &\star \\
+		0 &-1 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 \\
+		0 &0  &0 &0 &0 &0 &0 &0 &0 &-1 &0 &0 &0 &0 &0 &0 \\
 		0 &\star &\star &\star &\star &\star &\star &\star &0 &0 &0 &0 &0 &0 &0 &0 \\
-		0 &0 &0 &0 &0 &0 &0 &0 &0 &\star &\star &\star &\star &\star &\star &\star \\
-		1 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 \\
-		0 &0 &0 &0 &0 &0 &0 &0 &1 &0 &0 &0 &0 &0 &0 &0
+		0 &0  &0 &0 &0 &0 &0 &0 &0 &\star &\star &\star &\star &\star &\star &\star \\
+		1 &0  &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 \\
+		0 &0  &0 &0 &0 &0 &0 &0 &1 &0 &0 &0 &0 &0 &0 &0
 	\end{pmatrix}
+\end{equation}\\[10pt]
+Where the $\star$ elements represent the non constant terms of the $Q$ matrix.
+\end{frame}
+%
+\begin{frame}
+\frametitle{Controllability}
+Performing row swapping, in order to calculate the matrix rank, we obtain the matrix
+$\tilde{Q}(x)$ as follows:\\[10pt]
+\begin{equation}
+	\tilde{Q}(x)=%
+	\begin{pmatrix}
+		1 &0     &0     &0     &0     &0     &0     &0 &\dots \\
+		0 &\star &\star &0     &\star &0     &0     &0 &\dots \\
+		0 &\star &\star &0     &0     &0     &0     &0 &\dots \\
+		0 &0     &0     &\star &0     &0     &\star &0 &\dots \\
+		0 &0     &0     &0     &-1    &0     &0     &0 &\dots \\
+		0 &0     &0     &0     &0     &-1    &0     &0 &\dots \\
+		0 &0     &0     &\star &0     &\star &\star &0 &\dots \\
+		0 &0     &0     &0     &0     &0     &0     &1 &\dots
+	\end{pmatrix}_{8\times16}
 \end{equation}
-Where hte $\star$ elements represent the non constant terms of the $Q$ matrix.
-
+\end{frame}
+%
+\begin{frame}
+\frametitle{Controllability}
+\textbf{Rank condition.} Evaluating the rank of matrix $\tilde{Q}(x_0)$ in the equilibria, the following cases are obtained:
+\begin{itemize}
+	\item $x_4 \equiv \pi/2,\; x_8 \equiv 0\; \implies rank(Q(x_0))<8$.\\ Which represent the physical condition where $\beta = \pi/2$ with null angular velocity, the system is out of the range of interest.
+	\item $x_3 \equiv \pi/2,\; x_7 \equiv 0\; \implies rank(Q(x_0))<8$.\\ Which represent the physical condition where $\alpha = \pi/2$ with null angular velocity; the same arguments as above hold.
+	\item In all other cases we find $rank(Q(x_0))=8$ and the rank condition of controllability is satisfied.
+\end{itemize}
 \end{frame}
 %
 \subsubsection{Observability}
