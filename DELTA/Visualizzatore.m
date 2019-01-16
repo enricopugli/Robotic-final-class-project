@@ -99,11 +99,3 @@ end
 
 close all
 
-% time
-
-% cla;
-
-% figure
-% plot3(q_ref(:,1), q_ref(:,2), q_ref(:,3))
-% grid on
-

@@ -268,12 +268,131 @@ and
 \subsubsection{Computed torque}
 \begin{frame}
 \frametitle{Computed torque}
+Control equation:
+\begin{equation}
+	\tau_{CT} = M(q)\ddot{q}_d + C(q,\dot{q})\dot{q} + G(q) + K_pe + K_v\dot{e}
+\end{equation}
+with
+\begin{equation*}
+K_P = 500, \; K_D = 100
+\end{equation*}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Computed torque}
+%
+\begin{columns}
+\begin{column}{0.5\textwidth}
+	Descrizione traiettoria
+\end{column}
+\begin{column}{0.5\textwidth}
+	\begin{figure}
+	\frame{\includegraphics[width=\linewidth]{img/computedTorque/Visualizzatore.png}}
+	\end{figure}
+\end{column}
+\end{columns}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Computed torque}
+%
+\begin{columns}
+	\begin{column}{0.5\textwidth}
+	\begin{figure}
+	\frame{\includegraphics[width=\linewidth]{img/computedTorque/Eerror}}
+	\end{figure}
+	\end{column}
+	%
+	\begin{column}{0.5\textwidth}
+	\begin{figure}
+	\frame{\includegraphics[width=\linewidth]{img/computedTorque/confronto}}
+	\end{figure}
+	\end{column}
+\end{columns}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Computed torque}
+%
+\begin{columns}
+	\begin{column}{0.5\textwidth}
+	\begin{figure}
+	\frame{\includegraphics[width=\linewidth]{img/computedTorque/tau}}
+	\end{figure}
+	\end{column}
+	%
+	\begin{column}{0.5\textwidth}
+	\begin{figure}
+	\frame{\includegraphics[width=\linewidth]{img/computedTorque/Power}}
+	\end{figure}
+	\end{column}
+\end{columns}
 \end{frame}
 %
 \subsubsection{Backstepping}
 \begin{frame}
 \frametitle{Backstepping}
+Control equation:
+\begin{equation}
+	\tau_{BS} = M(q)\ddot{q}_r + C(q,\dot{q})\dot{q}_r + G(q) - K_ds + J^Te
+\end{equation}
+with
+\begin{align*}
+\ddot{q}_r=\ddot{q}_d - \Lambda\dot{e}, && \dot{q}_r=\dot{q}_d - \Lambda e, && s=\dot{q}_ - \dot{q}_r, && K_d=50, && \Lambda=400
+\end{align*}
 \end{frame}
+%
+\begin{frame}
+\frametitle{Backstepping}
+%
+\begin{columns}
+\begin{column}{0.5\textwidth}
+	Descrizione traiettoria
+\end{column}
+\begin{column}{0.5\textwidth}
+	\begin{figure}
+	\frame{\includegraphics[width=\linewidth]{img/backstepping/Visualizzatore.png}}
+	\end{figure}
+\end{column}
+\end{columns}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Backstepping}
+%
+\begin{columns}
+	\begin{column}{0.5\textwidth}
+	\begin{figure}
+	\frame{\includegraphics[width=\linewidth]{img/backstepping/Eerror}}
+	\end{figure}
+	\end{column}
+	%
+	\begin{column}{0.5\textwidth}
+	\begin{figure}
+	\frame{\includegraphics[width=\linewidth]{img/backstepping/confronto}}
+	\end{figure}
+	\end{column}
+\end{columns}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Backstepping}
+%
+\begin{columns}
+	\begin{column}{0.5\textwidth}
+	\begin{figure}
+	\frame{\includegraphics[width=\linewidth]{img/backstepping/tau}}
+	\end{figure}
+	\end{column}
+	%
+	\begin{column}{0.5\textwidth}
+	\begin{figure}
+	\frame{\includegraphics[width=\linewidth]{img/backstepping/Power}}
+	\end{figure}
+	\end{column}
+\end{columns}
+\end{frame}
+%
 %
 \subsubsection{Adaptive backstepping}
 \begin{frame}

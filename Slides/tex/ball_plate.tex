@@ -89,27 +89,70 @@ We express the dynamic in matrix form:
 \begin{equation}
 \begin{aligned}
 M(q) &=%
-\begin{bmatrix}
+\begin{pmatrix}
 	\left(m + \frac{I_b}{r^2}\right) &0 &0 &0\\
 	0 &\left(m + \frac{I_b}{r^2}\right) &0 &0\\
 	0 &0 &\left(I_b + I_p + mx^2\right) &mxy\\
 	0 &0 &mxy &\left(I_b + I_p + my^2\right)
-\end{bmatrix}\\
+\end{pmatrix}\\
 C(q,\dot{q}) &=%
-\begin{bmatrix}
+\begin{pmatrix}
 	0 &0 &-\dot{\alpha} x &-\dot{\alpha} y\\
 	0 &0 &-\dot{\beta} x &-\dot{\beta} y\\
 	2\dot{\alpha}x &0 &0 &\left(\dot{x}y+x\dot{y}\right)\\
 	0 &2\dot{\beta}y &\left(\dot{x}y+x\dot{y}\right) &0
-\end{bmatrix}\\
+\end{pmatrix}\\
 G(q) &=%
-\begin{bmatrix}
+\begin{pmatrix}
 	mg\,sin\alpha\\
 	mg\,sin\beta\\
 	mgx\,cos\alpha\\
 	mgx\,cos\beta
-\end{bmatrix}
+\end{pmatrix}
 \end{aligned}
 \end{equation}
+\end{frame}
 %
+\begin{frame}
+\frametitle{Ball and plate - Dynamic model}
+%
+Affine-in-control formulation:
+\begin{equation}
+	\dot{x} =%
+	\begin{pmatrix}
+	x_5\\ x_6\\ x_7\\ x_8\\ -B(q)^{-1}\left(C(q,\dot{q})\dot{q}+G(q)\right)
+	\end{pmatrix}
+	+
+	\begin{pmatrix}
+		0_{4\times2}\\
+		B(q)^{-1}
+	\end{pmatrix}
+	\begin{pmatrix}
+		\tau_1\\
+	 	\tau_2
+	\end{pmatrix}
+\end{equation}
+Where
+\[x = (x_b, y_b, \alpha, \beta, \dot{x_b}, \dot{y_b}, \dot{\alpha}, \dot{\beta})^T\]
+\end{frame}
+%
+\subsection{Structural properties}
+\subsubsection{Controllability}
+\begin{frame}
+\frametitle{Controllability}
+\end{frame}
+%
+\subsubsection{Observability}
+\begin{frame}
+\frametitle{Observability}
+\end{frame}
+%
+\subsection{Feedback linearization}
+\begin{frame}
+\frametitle{Approximated Feedback linearization}
+\end{frame}
+%
+\subsection{Control}
+\begin{frame}
+\frametitle{PID Control}
 \end{frame}
