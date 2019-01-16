@@ -35,5 +35,24 @@ for i=3:2:15
 O = [O;jacobian(O(i-2:i-1),x)*f];
 end
 
+Og1 = jacobian(O(1:2),x)*g1;
+
+for i=3:2:15
+Og1 = [Og1;jacobian(O(i:i+1),x)*g1];
+end
+
+Og2 = jacobian(O(1:2),x)*g2;
+
+for i=3:2:15
+Og2 = [Og2;jacobian(O(i:i+1),x)*g2];
+end
+
+O = [O; Og1; Og2];
+
+
 %%
 dO = jacobian(O,x);
+
+
+%%
+

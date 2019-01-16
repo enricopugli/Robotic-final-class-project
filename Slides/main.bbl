@@ -141,6 +141,43 @@
       \verb http://dx.doi.org/10.1109/TIT.1983.1056714
       \endverb
     \endentry
+    \entry{Ho2013}{article}{}
+      \name{author}{3}{}{%
+        {{hash=4bfff235a86cc6d5a68028984f3b0eb4}{%
+           family={Ho},
+           family_i={H\bibinitperiod},
+           given={Ming\bibnamedelima Tzu},
+           given_i={M\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=09174075f90ec5f9b5e8ac57397ba9be}{%
+           family={Rizal},
+           family_i={R\bibinitperiod},
+           given={Yusie},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=620258bc4c42e7545208c3a095eea45e}{%
+           family={Chu},
+           family_i={C\bibinitperiod},
+           given={Li\bibnamedelima Ming},
+           given_i={L\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{435f06b3407ebcf26a960ade09f62317}
+      \strng{fullhash}{435f06b3407ebcf26a960ade09f62317}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{17298806}
+      \field{journaltitle}{International Journal of Advanced Robotic Systems}
+      \field{title}{{Visual servoing tracking control of a ball and plate system: Design, implementation and experimental validation}}
+      \field{volume}{10}
+      \field{year}{2013}
+      \verb{doi}
+      \verb 10.5772/56525
+      \endverb
+      \verb{file}
+      \verb :home/enrico/Desktop/Tavole/RiferimentiTavole/BallAndBeam/56525.pdf:pdf
+      \endverb
+      \keyw{Ball And Plate System,Feedback Linearization,Visual Servoing}
+    \endentry
   \endsortlist
 \endrefsection
 \endinput

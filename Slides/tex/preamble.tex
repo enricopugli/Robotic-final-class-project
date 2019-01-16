@@ -12,6 +12,11 @@
 % \usepgfplotslibrary{dateplot}
 % \usemintedstyle{trac}
 
+%Utilities
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{cancel}
+
 % Graphics
 \usepackage[absolute,overlay]{textpos}
 \usepackage[font=scriptsize,labelfont=bf]{caption}
@@ -27,7 +32,11 @@
 \usepackage{gensymb}
 
 %Math
+\usepackage{breqn}
 \setcounter{MaxMatrixCols}{20}
+
+\newcommand\hcancel[2][black]{\setbox0=\hbox{$#2$}%
+\rlap{\raisebox{.45\ht0}{\textcolor{#1}{\rule{\wd0}{1pt}}}}#2}
 
 %% Title frame information
 \title{Tavole applicative}

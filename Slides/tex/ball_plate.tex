@@ -137,12 +137,46 @@ Where
 \end{frame}
 %
 \begin{frame}
-\frametitle{Ball and plate - Dynamic model}
-\textbf{Change of coordinates}:
+\frametitle{Ball and plate - Change of coordinates}
+In order to simplify the analysis of the structural properties of the Ball and plate system, the following change of coordinates is adopted:
 \begin{align}
 	u_1 = 2mx\dot{x}\dot{\alpha} - mgx\,cos\alpha - \left(I_p + I_b + mx^2\right)\ddot{\alpha} - m\dot{\beta}\left(\dot{x}y + \dot{y}x\right) - 2m\dot{\alpha}\dot{x}x \nonumber \\
 	u_2 = 2my\dot{y}\dot{\beta} - mgy\,cos\beta - \left(I_p + I_b + my^2\right)\ddot{\beta} - m\dot{\alpha}\left(\dot{x}y + \dot{y}x\right) - 2m\dot{\beta}\dot{y}y \nonumber \\
 \end{align}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Ball and plate - Change of coordinates}
+We obtain the following system in affine form:
+\begin{equation}\label{BP_equations}
+\dot{x} =%
+	\begin{pmatrix}
+	x_5\\
+	x_6\\
+	x_7\\
+	x_8\\
+	\mathcal{E}(x_7x_8x_2 + x^2_3x_1 - g\,sinx_3)\\
+	\mathcal{E}(x_7x_8x_1 + x^2_3x_2 - g\,sinx_4)\\
+	0\\
+	0\\
+	\end{pmatrix}
+	+
+	\begin{pmatrix}
+		0 &0\\
+		0 &0\\
+		0 &0\\
+		0 &0\\
+		0 &0\\
+		0 &0\\
+		1 &0\\
+		0 &1\\
+	\end{pmatrix}
+	\begin{pmatrix}
+		u_1\\
+	 	u_2
+	\end{pmatrix}
+\end{equation}\\[10pt]
+Where $\mathcal{E} = \frac{mr^2_b}{mr^2_b + I_b}$
 \end{frame}
 %
 \subsection{Structural properties}
@@ -153,7 +187,7 @@ Chow theorem.
 \end{frame}
 \begin{frame}
 \frametitle{Controllability}
-\begin{equation}
+\begin{equation*}
 	Q(x) =%
 	\begin{pmatrix}
 		0 &0  &\star &\star &\star &\star &\star &\star &0 &0 &0 &0 &0 &0 &0 &0 \\
@@ -165,7 +199,7 @@ Chow theorem.
 		1 &0  &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 \\
 		0 &0  &0 &0 &0 &0 &0 &0 &1 &0 &0 &0 &0 &0 &0 &0
 	\end{pmatrix}
-\end{equation}\\[10pt]
+\end{equation*}\\[10pt]
 Where the $\star$ elements represent the non constant terms of the $Q$ matrix.
 \end{frame}
 %
@@ -201,11 +235,120 @@ $\tilde{Q}(x)$ as follows:\\[10pt]
 \subsubsection{Observability}
 \begin{frame}
 \frametitle{Observability}
+Given the observation space $\mathcal{O}$ as the space containing all the repeated Lie-derivatives:
+\[
+\mathcal{O} = \left\{h(\bar{x}),\;L_fh(\bar{x}),...\,,L_{g_i}L_fh(\bar{x}),...\right\}
+\]
+The system results locally observable if $dim\,(d\mathcal{O}) = n$, where $d\mathcal{O}$ is the observability codistribution:
+\[
+d\mathcal{O} = \left\{\frac{\partial h(\bar{x})}{\partial x},\;\frac{\partial L_fh(\bar{x})}{\partial x},...\,,\frac{\partial L_{g_i}L_fh(\bar{x})}{\partial x},...\right\}
+\]
+\end{frame}
+%
+\begin{frame}
+\frametitle{Observability}
+\begin{equation*}
+	d\mathcal{O} =%
+	\begin{pmatrix}
+		1 &0 &0 &0 &0 &0 &0 &0 \\
+		0 &1 &0 &0 &0 &0 &0 &0 \\
+		0 &0 &0 &0 &1 &0 &0 &0 \\
+		0 &0 &0 &0 &0 &1 &0 &0 \\
+	    d\mathcal{O}_{51} &0 &d\mathcal{O}_{53} &0 &0 &0 &d\mathcal{O}_{57} &0 \\
+		0 &d\mathcal{O}_{62} &0 &d\mathcal{O}_{64} &0 &0 &0 &d\mathcal{O}_{68} \\
+		0 &0 &d\mathcal{O}_{73} &0 &d\mathcal{O}_{75} &0 &d\mathcal{O}_{77} &0 \\
+		0 &0 &0 &d\mathcal{O}_{84} &0 &d\mathcal{O}_{86} &0 &d\mathcal{O}_{88} \\
+		\vdots &\vdots &\vdots &\vdots &\vdots &\vdots &\vdots &\vdots
+	\end{pmatrix}_{48\times8}
+\end{equation*}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Observability}
+Where:
+\begin{align*}
+d\mathcal{O}_{51} &=\mathcal{E}x^2_7 \nonumber \\
+d\mathcal{O}_{53} &=-\mathcal{E}g\,cosx_3 \nonumber \\
+d\mathcal{O}_{57} &=2\mathcal{E}x_1x_7 \nonumber \\
+d\mathcal{O}_{62} &=\mathcal{E}x^2_8 \nonumber \\
+d\mathcal{O}_{64} &=-\mathcal{E}g\,cosx_4 \nonumber \\
+d\mathcal{O}_{68} &=2\mathcal{E}x_2x_8 \nonumber \\
+d\mathcal{O}_{73} &=\mathcal{E}gx_7\,sinx_3 \nonumber \\
+d\mathcal{O}_{75} &=\mathcal{E}x^2_7 \nonumber \\
+d\mathcal{O}_{77} &=2\mathcal{E}x_5x_7 - \mathcal{E}g\,cosx_3 \nonumber \\
+d\mathcal{O}_{84} &=\mathcal{E}gx_8\,sinx_4 \nonumber \\
+d\mathcal{O}_{86} &=\mathcal{E}x^2_8 \nonumber \\
+d\mathcal{O}_{88} &=2\mathcal{E}x_6x_8 - \mathcal{E}g\,cosx_4 \nonumber \\
+\end{align*}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Observability}
+\textbf{Rank condition.} Evaluating the rank of the squared sub-matrix $d\mathcal{O}_{1-8}$ in the equilibria we can conclude for the global observability of the system since the matrix $rank(d\mathcal{O}) = n = 8$ everywhere.
 \end{frame}
 %
 \subsection{Feedback linearization}
 \begin{frame}
 \frametitle{Approximated Feedback linearization}
+Feedback linearization is only applicable to special cases of nonlinear systems that satisfy the constraints of controllability, involutivity and the existence of a degree relative equal to the dimension of the system or the minimum phase property.
+\end{frame}
+%
+\begin{frame}
+\frametitle{Approximated Feedback linearization}
+The \textit{Ball and plate} system described by the equations~\ref{BP_equations} fails to have full relative degree and does not fall under this class of systems. The Approximated Feedback Linearization (\textit{AFL}) approach proposed by Ming et al.\footfullcite{Ho2013} is thus used to control the system. This method consists in a two-steps approximation: higher order coupling terms are neglected to reduce the system to two decoupled \textit{Ball and beam} systems; then a second approximation is done to obtain an input-output feedback linearizable system.
+\end{frame}
+%
+\begin{frame}
+\frametitle{Approximated Feedback linearization}
+\textbf{First approximation}
+\begin{equation}
+\dot{x} =%
+	\begin{pmatrix}
+	x_5\\
+	x_6\\
+	x_7\\
+	x_8\\
+	\mathcal{E}(\hcancel[red]{x_7x_8x_2} + x^2_3x_1 - g\,sinx_3)\\
+	\mathcal{E}(\hcancel[red]{x_7x_8x_1} + x^2_3x_2 - g\,sinx_4)\\
+	0\\
+	0\\
+	\end{pmatrix}
+	+
+	\begin{pmatrix}
+		0 &0\\
+		0 &0\\
+		0 &0\\
+		0 &0\\
+		0 &0\\
+		0 &0\\
+		1 &0\\
+		0 &1\\
+	\end{pmatrix}
+	\begin{pmatrix}
+		u_1\\
+	 	u_2
+	\end{pmatrix}
+\end{equation}\\[10pt]
+Assuming that the operating ranges of $\alpha$ and $\beta$ are small, high order coupling terms are therefore small and neglected.
+\end{frame}
+%
+\begin{frame}
+\frametitle{Approximated Feedback linearization}
+\textbf{Second approximation}\newline
+We start with the differentiation to find the Feedback linearization change of variables:
+\begin{align*}
+&\xi_1 = h_1(x) = x_1; \\
+&\dot{\xi_1} = L_fh_1(x) = x_5; \\
+&\dot{\xi_2} = L^2_fh_1(x) = \mathcal{E}x_1x^2_7 - mg\,sinx_3; \\
+&\dot{\xi_3} = L^3_fh_1(x) + L_gL^2_fh_1(x) + L_gL^2_fh_1(x) = \mathcal{E}x_1x_5x^2_7 - x_7mg\,cosx_3 + \hcancel[red]{2Emx_1x_7u_1};
+\end{align*}\\[8pt]
+The higher order term dependent from the input is discarded, we follow up differentiating to complete the feedback linearization:
+\begin{equation*}
+\begin{aligned}
+\dot{\xi_4} = L^4_fh_1(x) + &L_gL^3_fh_1(x) + L_gL^3_fh_1(x) = \\
+&\mathcal{E}^2x^2_7(x_1x^2_7 - g\,sinx_3) + \mathcal{E}gx^2_7\,sinx_3 + 2u_1(\mathcal{E}x_5x_7 - \mathcal{E}g\,cosx_3)
+\end{aligned}
+\end{equation*}
 \end{frame}
 %
 \subsection{Control}

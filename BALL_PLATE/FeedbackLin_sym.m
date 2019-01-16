@@ -30,7 +30,8 @@ f1 = [x(5:8);
 
 g1 = [zeros([6,1]); u1; 0];
 g2 = [zeros([6,1]); 0; u1];
-  
+
+
 %% Approximated Feedback linearization of the simplified system
             
 y1 = x(1);
@@ -45,7 +46,7 @@ ddy2 = jacobian(dy2,x)*f1;
 dddy2 = jacobian(ddy2,x)*f1; % + jacobian(ddy2,x)*g1 + jacobian(ddy2,x)*g2;
 ddddy2 = jacobian(dddy2,x)*f1 + jacobian(dddy2,x)*g1 + jacobian(dddy2,x)*g2;
 
-%% Stabilization via pole placement
+%% Stabilization via pole placement of the linearized system
 
 Afl = blkdiag(diag(ones(3,1),1), diag(ones(3,1),1));
 Bfl = [zeros(3,2);
