@@ -183,7 +183,15 @@ Where $\mathcal{E} = \frac{mr^2_b}{mr^2_b + I_b}$
 \subsubsection{Controllability}
 \begin{frame}
 \frametitle{Controllability}
-Chow theorem.
+\textbf{Chow theorem.} If the accessibility distribution $\langle\Delta, \Delta_0\rangle = n$ in $x_0$ then the system is said to be locally accessible in $x_0$.\\
+\vspace{.8cm}
+Where $\Delta_0 = span\left\{g_1, g_2,..., g_d\right\}$ and $\Delta = span\left\{f, g_1, g_2,..., g_d\right\}$.\\
+\vspace{.8cm}
+We build then the matrix $Q(x)$ as:
+\begin{equation}
+	Q(x) = (g_1, g_2, ad_fg_1, ad_fg_2,\,...,ad^{n-1}_fg_1,ad^{n-1}_fg_2)
+\end{equation}
+And we evaluate its rank on the state space.
 \end{frame}
 \begin{frame}
 \frametitle{Controllability}
@@ -290,7 +298,7 @@ d\mathcal{O}_{88} =2\mathcal{E}x_6x_8 - \mathcal{E}g\,cosx_4 \nonumber \\
 \subsection{Feedback linearization}
 \begin{frame}
 \frametitle{Approximated Feedback linearization}
-Feedback linearization is only applicable to special cases of nonlinear systems that satisfy the constraints of controllability, involutivity and the existence of a degree relative equal to the dimension of the system or the minimum phase property.
+Feedback linearization is only applicable to special cases of nonlinear systems that satisfy the constraints of controllability, involutivity and the existence of a relative degree equal to the dimension of the system or minimum phase property.
 \end{frame}
 %
 \begin{frame}
