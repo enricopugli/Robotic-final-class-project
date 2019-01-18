@@ -176,13 +176,13 @@ We obtain the following system in affine form:
 	 	u_2
 	\end{pmatrix}
 \end{equation}\\[10pt]
-Where $\mathcal{E} = \frac{mr^2_b}{mr^2_b + I_b}$
+Where \[\mathcal{E} = \frac{mr^2_b}{mr^2_b + I_b}\]
 \end{frame}
 %
 \subsection{Structural properties}
 \subsubsection{Controllability}
 \begin{frame}
-\frametitle{Controllability}
+\frametitle{Accessibility}
 \textbf{Chow theorem.} If the accessibility distribution $\langle\Delta, \Delta_0\rangle = n$ in $x_0$ then the system is said to be locally accessible in $x_0$.\\
 \vspace{.8cm}
 Where $\Delta_0 = span\left\{g_1, g_2,..., g_d\right\}$ and $\Delta = span\left\{f, g_1, g_2,..., g_d\right\}$.\\
@@ -194,49 +194,108 @@ We build then the matrix $Q(x)$ as:
 And we evaluate its rank on the state space.
 \end{frame}
 \begin{frame}
-\frametitle{Controllability}
+\frametitle{Accessibility}
 \begin{equation*}
 	Q(x) =%
 	\begin{pmatrix}
-		0 &0  &\star &\star &\star &\star &\star &\star &0 &0 &0 &0 &0 &0 &0 &0 \\
-		0 &0  &0 &0 &0 &0 &0 &0 &0 &0 &\star &\star &\star &\star &\star &\star \\
+		0 &0  &\star &\star &\star &\star &\star &\star &0 &0 &\star &\star &\star &\star &\star &\star \\
+		0 &0  &\star &\star &\star &\star &\star &\star &0 &0 &\star &\star &\star &\star &\star &\star \\
 		0 &-1 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 \\
 		0 &0  &0 &0 &0 &0 &0 &0 &0 &-1 &0 &0 &0 &0 &0 &0 \\
-		0 &\star &\star &\star &\star &\star &\star &\star &0 &0 &0 &0 &0 &0 &0 &0 \\
-		0 &0  &0 &0 &0 &0 &0 &0 &0 &\star &\star &\star &\star &\star &\star &\star \\
+		0 &\star &\star &\star &\star &\star &\star &\star &0 &\star &\star &\star &\star &\star &\star &\star \\
+		0 &\star &\star &\star &\star &\star &\star &\star &0 &\star &\star &\star &\star &\star &\star &\star \\
 		1 &0  &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 \\
 		0 &0  &0 &0 &0 &0 &0 &0 &1 &0 &0 &0 &0 &0 &0 &0
 	\end{pmatrix}
 \end{equation*}\\[10pt]
-Where the $\star$ elements represent the non constant terms of the $Q$ matrix.
+Where the $\star$ elements represent the non constant terms of $Q(x)$ matrix.
 \end{frame}
 %
 \begin{frame}
-\frametitle{Controllability}
-Performing row swapping, in order to calculate the matrix rank, we obtain the matrix
-$\tilde{Q}(x)$ as follows:\\[10pt]
+\frametitle{Accessibility}
+In order to calculate $rank(Q(x))$ we perform the following columns and rows swapping:
+\begin{align*}
+	row\;1 &\leftarrow\rightarrow row\;7 \\
+	column\;2 &\leftarrow\rightarrow column\;3 \\
+	column\;10 &\leftarrow\rightarrow column\;4 \\
+	column\;9 &\leftarrow\rightarrow column\;8 \\
+	column\;2 &\leftarrow\rightarrow column\;12 \\
+	column\;2 &\leftarrow\rightarrow column\;2 \\
+	columns\;5,6,7 &\leftarrow\rightarrow columns\;10,11,12
+\end{align*}
+\end{frame}
+%
+% \begin{frame}
+% \frametitle{Accessibility}
+% We obtain the matrix $\tilde{Q}(x)$ as follows:\\[10pt]
+% \begin{equation}
+% 	\tilde{Q}(x)=%
+% 	\begin{pmatrix}
+% 		1 &0     &0     &0     &0     &0     &0     &0 &\dots \\
+% 		0 &\star &0     &0     &\star &\star &\star &0 &\dots \\
+% 		0 &0     &-1    &0     &0     &0     &0     &0 &\dots \\
+% 		0 &0     &0     &-1    &0     &0     &0     &0  &\dots \\
+% 		0 &\star &\star &\star &\star &\star &\star &0 &\dots \\
+% 		0 &\star &\star &\star &\star &\star &\star &0 &\dots \\
+% 		0 &\star &0     &0     &\star &\star &\star &0 &\dots \\
+% 		0 &0     &0     &0     &0     &0     &0     &1 &\dots
+% 	\end{pmatrix}_{8\times16}
+% \end{equation}
+% \end{frame}
+%
+\begin{frame}
+\frametitle{Accessibility}
+We obtain the matrix $\tilde{Q}(x)$ as follows:\\[10pt]
 \begin{equation}
 	\tilde{Q}(x)=%
 	\begin{pmatrix}
-		1 &0     &0     &0     &0     &0     &0     &0 &\dots \\
-		0 &\star &\star &0     &\star &0     &0     &0 &\dots \\
-		0 &\star &\star &0     &0     &0     &0     &0 &\dots \\
-		0 &0     &0     &\star &0     &0     &\star &0 &\dots \\
-		0 &0     &0     &0     &-1    &0     &0     &0 &\dots \\
-		0 &0     &0     &0     &0     &-1    &0     &0 &\dots \\
-		0 &0     &0     &\star &0     &\star &\star &0 &\dots \\
-		0 &0     &0     &0     &0     &0     &0     &1 &\dots
+		\begin{matrix}
+		1 &0     &0     &0 \\
+		0 &\tilde{Q}_{22} &0     &0 \\
+		0 &0     &-1    &0 \\
+		0 &0     &0     &-1
+		\end{matrix}
+		&\begin{matrix}
+		0     &0     &0     &0 &\dots \\
+		\star &\star &\star &0 &\dots \\
+		0     &0     &0     &0 &\dots \\
+		0     &0     &0     &0  &\dots
+		\end{matrix}\\
+		\begingroup % keep the change local
+		\setlength\arraycolsep{8.5pt}
+		\begin{matrix}
+		0 \!&\star &\star &\star \\
+		0 \!&\star &\star &\star \\
+		0 \!&\star &0     &0     \\
+		0 \!&0     &0     &0
+		\end{matrix}
+		\endgroup
+		&\begin{array}{cr}
+			\mbox{\LARGE $\gimel$}
+			&\begin{matrix}
+			0 &\dots \\
+			0 &\dots \\
+			0 &\dots
+			\end{matrix}\\
+			\begin{matrix}
+			0 &0 &0
+			\end{matrix}
+			&\begin{matrix}
+			1 &\dots
+			\end{matrix}
+		\end{array}
 	\end{pmatrix}_{8\times16}
-\end{equation}
+\end{equation}\\[8pt]
+Where \[\tilde{Q}_{22} = 2Bx_5x_7 + 4Bx_6x_8 + Bg\,cosx_4\]
 \end{frame}
 %
 \begin{frame}
-\frametitle{Controllability}
-\textbf{Rank condition.} Evaluating the rank of matrix $\tilde{Q}(x_0)$ in the equilibria, the following cases are obtained:
+\frametitle{Accessibility}
+\textbf{Rank condition.} To evaluate the rank of $\tilde{Q}(x_0)$ is sufficient to look at rank deficiency conditions of $\tilde{Q}_{22}$ and $\gimel$. The following cases are obtained:
 \begin{itemize}
-	\item $x_4 \equiv \pi/2,\; x_8 \equiv 0\; \implies rank(Q(x_0))<8$.\\ Which represent the physical condition where $\beta = \pi/2$ with null angular velocity, the system is out of the range of interest.
-	\item $x_3 \equiv \pi/2,\; x_7 \equiv 0\; \implies rank(Q(x_0))<8$.\\ Which represent the physical condition where $\alpha = \pi/2$ with null angular velocity; the same arguments as above hold.
-	\item In all other cases we find $rank(Q(x_0))=8$ and the rank condition of controllability is satisfied.
+	\item $x_4 \equiv \pi/2\; \land (x_8 \equiv 0 \lor x_6 \equiv 0)\; \land (x_7 \equiv 0 \lor x_5 \equiv 0) \implies \tilde{Q}_{22}~\equiv~0 \implies rank(Q)<8$.\\ Which represent the physical condition where $\beta = \pi/2$ or $\alpha = \pi/2$  with null angular velocity, the system is out of the range of interest.
+	\item $\left(x_7 \equiv 0\; \land x_8 \equiv 0\;\land (x_3 \equiv \pi/2 \lor x_4 \equiv \pi/2)\right) \lor \left((x_1 \equiv 0\; \land x_2 \equiv 0\; \lor x_5 \equiv 0\; \lor x_6 \equiv 0)\;\land (x_3 \equiv \pi/2 \lor x_4 \equiv \pi/2)\right) \implies rank(\gimel)~<~3 \implies rank(Q)<8$.\\ Which represent the physical condition where $\beta = \pi/2$ or $\alpha = \pi/2$ with null angular velocity; the same arguments as above hold.
+	\item In all other cases we find $rank(Q(x_0))\equiv8$ and rank condition of controllability is satisfied.
 \end{itemize}
 \end{frame}
 %
@@ -253,6 +312,24 @@ d\mathcal{O} = \left\{\frac{\partial h(\bar{x})}{\partial x},\;\frac{\partial L_
 \]
 \end{frame}
 %
+% \begin{frame}
+% \frametitle{Observability}% modello semplificato
+% \begin{equation*}
+% 	d\mathcal{O} =%
+% 	\begin{pmatrix}
+% 		1 &0 &0 &0 &0 &0 &0 &0 \\
+% 		0 &1 &0 &0 &0 &0 &0 &0 \\
+% 		0 &0 &0 &0 &1 &0 &0 &0 \\
+% 		0 &0 &0 &0 &0 &1 &0 &0 \\
+% 	    d\mathcal{O}_{51} &0 &d\mathcal{O}_{53} &0 &0 &0 &d\mathcal{O}_{57} &0 \\
+% 		0 &d\mathcal{O}_{62} &0 &d\mathcal{O}_{64} &0 &0 &0 &d\mathcal{O}_{68} \\
+% 		0 &0 &d\mathcal{O}_{73} &0 &d\mathcal{O}_{75} &0 &d\mathcal{O}_{77} &0 \\
+% 		0 &0 &0 &d\mathcal{O}_{84} &0 &d\mathcal{O}_{86} &0 &d\mathcal{O}_{88} \\
+% 		\vdots &\vdots &\vdots &\vdots &\vdots &\vdots &\vdots &\vdots
+% 	\end{pmatrix}_{48\times8}
+% \end{equation*}
+% \end{frame}
+%
 \begin{frame}
 \frametitle{Observability}
 \begin{equation*}
@@ -262,13 +339,37 @@ d\mathcal{O} = \left\{\frac{\partial h(\bar{x})}{\partial x},\;\frac{\partial L_
 		0 &1 &0 &0 &0 &0 &0 &0 \\
 		0 &0 &0 &0 &1 &0 &0 &0 \\
 		0 &0 &0 &0 &0 &1 &0 &0 \\
-	    d\mathcal{O}_{51} &0 &d\mathcal{O}_{53} &0 &0 &0 &d\mathcal{O}_{57} &0 \\
-		0 &d\mathcal{O}_{62} &0 &d\mathcal{O}_{64} &0 &0 &0 &d\mathcal{O}_{68} \\
-		0 &0 &d\mathcal{O}_{73} &0 &d\mathcal{O}_{75} &0 &d\mathcal{O}_{77} &0 \\
-		0 &0 &0 &d\mathcal{O}_{84} &0 &d\mathcal{O}_{86} &0 &d\mathcal{O}_{88} \\
+	    d\mathcal{O}_{51} &d\mathcal{O}_{52} &d\mathcal{O}_{53} &0 &0 &0 &d\mathcal{O}_{57} &d\mathcal{O}_{58} \\
+		0 &0 &d\mathcal{O}_{63} &0 &0 &0 &d\mathcal{O}_{67} &d\mathcal{O}_{68} \\
+		0 &0 &d\mathcal{O}_{73} &0 &d\mathcal{O}_{75} &d\mathcal{O}_{76} &d\mathcal{O}_{77} &d\mathcal{O}_{78} \\
+		0 &0 &0 &d\mathcal{O}_{84} &d\mathcal{O}_{85} &d\mathcal{O}_{86} &d\mathcal{O}_{87} &d\mathcal{O}_{88} \\
 		\vdots &\vdots &\vdots &\vdots &\vdots &\vdots &\vdots &\vdots
 	\end{pmatrix}_{48\times8}
 \end{equation*}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Observability}
+In order to calculate $rank(d\mathcal{O})$ we perform the following columns and rows swapping:
+\begin{equation*}
+columns\;5,6 \leftarrow\rightarrow columns\;3,4
+\end{equation*}
+We obtain the following matrix:
+\begin{equation*}
+	d\tilde{\mathcal{O}} =%
+	\begin{pmatrix}
+		1 &0 &0 &0 &0 &0 &0 &0 \\
+		0 &1 &0 &0 &0 &0 &0 &0 \\
+		0 &0 &1 &0 &0 &0 &0 &0 \\
+		0 &0 &0 &1 &0 &0 &0 &0 \\
+	    d\tilde{\mathcal{O}}_{51} &d\tilde{\mathcal{O}}_{52} &0 &0 &d\tilde{\mathcal{O}}_{55} &0 &d\tilde{\mathcal{O}}_{57} &d\tilde{\mathcal{O}}_{58} \\
+		d\tilde{\mathcal{O}}_{61} &d\tilde{\mathcal{O}}_{62} &0 &0 &0 &d\tilde{\mathcal{O}}_{66} &d\tilde{\mathcal{O}}_{67} &d\tilde{\mathcal{O}}_{68} \\
+		0 &0 &d\tilde{\mathcal{O}}_{73} &d\tilde{\mathcal{O}}_{74} &d\tilde{\mathcal{O}}_{75} &0 &d\tilde{\mathcal{O}}_{77} &d\tilde{\mathcal{O}}_{78} \\
+		0 &0 &d\tilde{\mathcal{O}}_{83} &d\tilde{\mathcal{O}}_{84} &0 &d\tilde{\mathcal{O}}_{86} &d\tilde{\mathcal{O}}_{87} &d\tilde{\mathcal{O}}_{88} \\
+		\vdots &\vdots &\vdots &\vdots &\vdots &\vdots &\vdots &\vdots
+	\end{pmatrix}_{48\times8}
+\end{equation*}
+
 \end{frame}
 %
 \begin{frame}
@@ -461,4 +562,14 @@ Given the full controllability and observability of the system, a feedback regul
 \end{frame}
 \begin{frame}
 \frametitle{PID Control}
+\end{frame}
+%
+\begin{frame}
+\frametitle{PID Control}
+%
+\begin{center}
+	\movie[width=11cm,height=5.01cm,autostart,loop,poster,showcontrols=true]%
+	{}%
+	{video/BallAndPlate.avi}
+\end{center}
 \end{frame}
