@@ -1,5 +1,7 @@
 function Y = Regressor_function(q, dq_r, ddq_r, ee)
 
+
+
 [J, dJ] = Jacobian_DELTA(ee,q);
 
 g_vec = [0; 0; -9.81];
