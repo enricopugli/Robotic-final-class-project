@@ -267,23 +267,57 @@ with
 \frametitle{PD with gravity compensation}
 %
 \begin{columns}
-\begin{column}{0.5\textwidth}
+\begin{column}{0.4\textwidth}
 	Descrizione traiettoria
 \end{column}
-\begin{column}{0.5\textwidth}
-	\begin{figure}
-	\movie[width=\linewidth]{}{video/PidPointToPoint.avi}
-	\end{figure}
+\begin{column}{0.6\textwidth}
+	\begin{center}
+		\movie[width=6cm,height=4.5cm,autostart,loop]%
+		{\includegraphics[width=6cm,height=4.5cm]{img/PID_ptp/Visualizzatore}}%
+		{video/PidPointToPoint.avi}
+	\end{center}
 \end{column}
 \end{columns}
 \end{frame}
-
+%
 \begin{frame}
+\frametitle{PD with gravity compensation}
+%
+\begin{columns}
+	\begin{column}{0.5\textwidth}
 	\begin{figure}
-	\movie[width=\linewidth]{}{video/PidPointToPoint.avi}
+	\frame{\includegraphics[width=\linewidth]{img/PID_ptp/Eerror}}
 	\end{figure}
+	\end{column}
+	%
+	\begin{column}{0.5\textwidth}
+	\begin{figure}
+	\frame{\includegraphics[width=\linewidth]{img/PID_ptp/confronto}}
+	\end{figure}
+	\end{column}
+\end{columns}
 \end{frame}
+%
+\begin{frame}
+\frametitle{PD with gravity compensation}
+%
+\begin{columns}
+	\begin{column}{0.5\textwidth}
+	\begin{figure}
+	\frame{\includegraphics[width=\linewidth]{img/PID_ptp/tau}}
+	\end{figure}
+	\end{column}
+	%
+	\begin{column}{0.5\textwidth}
+	\begin{figure}
+	\frame{\includegraphics[width=\linewidth]{img/PID_ptp/Power}}
+	\end{figure}
+	\end{column}
+\end{columns}
+\end{frame}
+%
 \subsubsection{Computed torque}
+%
 \begin{frame}
 \frametitle{Computed torque}
 Control equation:
@@ -300,13 +334,15 @@ K_P = 500, \; K_D = 100
 \frametitle{Computed torque}
 %
 \begin{columns}
-\begin{column}{0.5\textwidth}
+\begin{column}{0.4\textwidth}
 	Descrizione traiettoria
 \end{column}
-\begin{column}{0.5\textwidth}
-	\begin{figure}
-	\frame{\includegraphics[width=\linewidth]{img/computedTorque/Visualizzatore.png}}
-	\end{figure}
+\begin{column}{0.6\textwidth}
+	\begin{center}
+		\movie[width=6cm,height=4.5cm,autostart,loop]%
+		{\includegraphics[width=6cm,height=4.5cm]{img/computedTorque/Visualizzatore}}%
+		{video/ComputedTorque.avi}
+	\end{center}
 \end{column}
 \end{columns}
 \end{frame}
@@ -364,13 +400,15 @@ with
 \frametitle{Backstepping}
 %
 \begin{columns}
-\begin{column}{0.5\textwidth}
+\begin{column}{0.4\textwidth}
 	Descrizione traiettoria
 \end{column}
-\begin{column}{0.5\textwidth}
-	\begin{figure}
-	\frame{\includegraphics[width=\linewidth]{img/backstepping/Visualizzatore.png}}
-	\end{figure}
+\begin{column}{0.6\textwidth}
+	\begin{center}
+		\movie[width=6cm,height=4.5cm,autostart,loop]%
+		{\includegraphics[width=6cm,height=4.5cm]{img/backstepping/Visualizzatore}}%
+		{video/Backstepping.avi}
+	\end{center}
 \end{column}
 \end{columns}
 \end{frame}
