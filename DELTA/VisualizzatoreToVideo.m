@@ -36,7 +36,7 @@ time = 0;
 % disegno delle braccia
 % disegno delle spalle
 
-video = VideoWriter('..\Video\VideoDelta\AdaptiveCircle.mp4'); %create the video object
+video = VideoWriter('..\Video\VideoDelta\AdaptiveCircle'); %create the video object
 open(video); %open the file for writing
 
 for t = 1:300:t_final
