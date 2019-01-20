@@ -1,6 +1,6 @@
 close all
 
-final = 20000; 
+final = 3000; 
 
 % Plot error on end-effector position
 figure
@@ -14,7 +14,7 @@ legend('ex', 'ey', 'ez', 'Location', 'se')
 title('End effector position error')
 grid on
 
-saveas(gcf, '..\Img\computedTorque\Eerror', 'epsc')
+saveas(gcf, '..\Img\PID_ptp\Eerror', 'epsc')
 
 % Plot tau input
 figure
@@ -28,7 +28,7 @@ legend('tau1', 'tau2', 'tau3', 'Location', 'se')
 title('Torque')
 grid on
 
-saveas(gcf, '..\Img\computedTorque\tau', 'epsc')
+saveas(gcf, '..\Img\PID_ptp\tau', 'epsc')
 
 % Plot tau input
 figure
@@ -39,7 +39,7 @@ ylabel('Watt')
 title('Instant power')
 grid on
 
-saveas(gcf, '..\Img\computedTorque\Power', 'epsc')
+saveas(gcf, '..\Img\PID_ptp\Power', 'epsc')
 
 % Plot end effector reference and position
 figure 
@@ -53,7 +53,7 @@ legend('ee_y', 'ee_r_y')
 subplot(3,1,3)
 plot(tout(1:final), ee(1:final,3),'r', tout(1:final), ee_r(1:final,3),'b')
 legend('ee_z', 'ee_r_z')
-saveas(gcf, '..\Img\computedTorque\confronto', 'epsc')
+saveas(gcf, '..\Img\PID_ptp\confronto', 'epsc')
 
 %%%%%%%%%%%%%
 figure
@@ -220,5 +220,5 @@ grid on
     % Disegno traiettoria di riferimento    
     plot3(ee_r(t,1), ee_r(t,2), ee_r(t,3), 'db');
     
-    saveas(gcf, '..\Img\computedTorque\Visualizzatore', 'png')
+    saveas(gcf, '..\Img\PID_ptp\Visualizzatore', 'png')
 

@@ -82,7 +82,7 @@ The position of the End-effector
 \]
 is described in a reference frame fixed to the base plate, as shown in figure~\ref{fig:Delta_param}.\\
 \vspace{.5cm}
-Joints variables $\alpha_i$ have been selected as state-variables to describe the robot dynamic:
+The angles $\alpha_i$ of the actuated joints have been selected as state-variables to describe the robot dynamic:
 \[
 q = (\alpha_1, \alpha_2, \alpha_3)^T
 \]
@@ -175,7 +175,7 @@ The system has two possible solutions. The one with negative $z$ coordinate that
 \begin{frame}
 \frametitle{Delta robot - Inverse kinematic}
 The inverse kinematic model let calculate the joint angles $q_i$ as functions of the position of the end effector.
-The model here presented have been developed by Codourey \footfullcite{Codourey_thesis} and has the advantage of removing the points of singularity contained in the model previously introduced by Clavel.\\
+The model here presented has been developed by Codourey \footfullcite{Codourey_thesis} and has the advantage of removing the points of singularity contained in the model previously introduced by Clavel.\\
 The rationale is still the intersection of a sphere and three circles but the computation is made for each angle in a frame centred in the centre of the $i-th$ joint and rotated with respect to the base frame of an angle $\theta_i$.
 \end{frame}
 %
@@ -218,7 +218,7 @@ The rationale is still the intersection of a sphere and three circles but the co
 %
 \begin{frame}
 \frametitle{Delta robot - Dynamic model}
-We express the dynamic of the delta robot in the classical matrix formulation:
+We express the dynamic of the delta robot in classic matrix formulation:
 \begin{equation}
 	\tau = M(q)\ddot{q} + C(q,\dot{q})\dot{q} + G(q)
 \end{equation}
@@ -260,9 +260,7 @@ Control equation:
 	\tau_{PD} = K_Pe + K_D\dot{e}+G(q)
 \end{equation}
 with
-\[ K_P = diag(1500, 1500, 1500) \]
-and
-\[ K_D = diag(60, 60, 60) \]
+\[ K_P = 1500\,, \qquad K_D = 60\]
 \end{frame}
 %
 \subsubsection{Computed torque}
