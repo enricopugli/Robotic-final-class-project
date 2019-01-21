@@ -268,7 +268,15 @@ with
 %
 \begin{columns}
 \begin{column}{0.4\textwidth}
-	\centering{Point to point trajectory}
+	Point to point trajectory:
+	\begin{equation*}
+		Goal=%
+		\begin{pmatrix}
+		0\\
+		0.3\\
+		-0.3
+		\end{pmatrix}
+	\end{equation*}
 \end{column}
 \begin{column}{0.6\textwidth}
 	\begin{center}
@@ -502,7 +510,14 @@ Control equation:
 %
 \begin{columns}
 \begin{column}{0.4\textwidth}
-	\centering{Circular trajectory}
+	Circular trajectory:
+	\begin{equation*}
+		\begin{cases}
+		x(t)=0.08\cos{(0.23t)}\\
+		y(t)=0.08\sin{(0.23t)}\\
+		z(t)=-0.03
+		\end{cases}
+	\end{equation*}
 \end{column}
 \begin{column}{0.6\textwidth}
 	\begin{center}
@@ -555,7 +570,14 @@ Control equation:
 %
 \begin{columns}
 \begin{column}{0.4\textwidth}
-	\centering{$\infty$ trajectory with sinusoidal~z}
+	Trajectory:
+	\begin{equation*}
+		\begin{cases}
+		x(t)=0.08\cos{(0.23t)}\\
+		y(t)=0.64\sin{(0.23t)}\cos{(0.23t)}\\
+		z(t)=0.02\cos{(20t)}-0.3
+		\end{cases}
+	\end{equation*}
 \end{column}
 \begin{column}{0.6\textwidth}
 	\begin{center}
