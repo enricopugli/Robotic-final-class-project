@@ -68,12 +68,6 @@ E_det_el = diag(E);
 
 
 
-%% Decomposizione LU 
-
-E2 = E(1:8, 1:8);
-[L,U] = lu(E2);
-spy(U);
-lambda = eig(U);
 
 
 
