@@ -293,6 +293,12 @@ We select the following rows sets $r_i$ of $d\tilde{\mathcal{O}}$:
 	\item $r_6 = \{5,6,39,40\} \implies det(D_6)\,=2\,\mathcal{E}^4\,g^2\,{x_{6}}^2 \implies rank(d\tilde{\mathcal{O}})<8\; \mathit{iff} x_6\equiv0$
 	\end{itemize}
 	%
+	Case $x_1 \equiv 0\; \land\; x_4 \equiv 0$:
+	\begin{itemize}
+	\item $r_5 = \{5,6,23,24\} \implies det(D_5)\,=2\,\mathcal{E}^4\,g^2\,{x_{5}}^2 \implies rank(d\tilde{\mathcal{O}})<8\; \mathit{iff} x_5\equiv0$
+	\item $r_6 = \{5,6,39,40\} \implies det(D_6)\,=2\,\mathcal{E}^4\,g^2\,{x_{6}}^2 \implies rank(d\tilde{\mathcal{O}})<8\; \mathit{iff} x_6\equiv0$
+	\end{itemize}
+	%
 	Case $x_1 \equiv 0\; \land\; x_2 \equiv 0\; \land\; x_5 \equiv 0\; \land\; x_6 \equiv 0\;$:
 	\begin{itemize}
 	\item $r_7 = \{5,6,7,8\} \implies det(D_7)\,=\mathcal{E}^4\,g^4\,{\cos x_{3}}^2\,{\cos x_{4}}^2 \implies rank(d\tilde{\mathcal{O}})<8\; \mathit{iff} x_3\equiv\pi/2\; \lor\; x_4\equiv\pi/2$
@@ -454,7 +460,7 @@ Feedback linearization is only applicable to special cases of nonlinear systems 
 %
 \begin{frame}
 \frametitle{Approximated Feedback linearization}
-\textit{Ball and plate} system described by the equations~\ref{BP_equations} fails to have full relative degree and does not fall under this class of systems. The Approximated Feedback Linearization (\textit{AFL}) approach proposed by Ming et al.\footfullcite{Ho2013} is thus used to control the system.
+\textit{Ball and plate} system described by the equations~\ref{BP_equations} fails to have full relative degree and we didn't manage to conclude on involutivity and on the stability of the zero dynamic.\\ The Approximated Feedback Linearization (\textit{AFL}) approach proposed by Ming et al.\footfullcite{Ho2013} is thus used to control the system.
 \end{frame}
 %
 \begin{frame}
@@ -545,7 +551,7 @@ We collect the 4-th equations of the two chains in the following matrices:
 %
 \begin{frame}
 \frametitle{Approximated Feedback Linearization}
-Given the non singularity of matrix $E(x)$ we obtain the feedback linearizing control law:
+In the ball of the equilibrium where the non singularity condition of matrix $E(x)$ is respected we obtain the feedback linearizing control law:
 \begin{equation}
 	U = -E^{-1}(x)\Gamma(x) + E^{-1}(x)\nu
 \end{equation}
