@@ -223,9 +223,9 @@ We express the dynamic of the delta robot in classic matrix formulation:
 	\tau = M(q)\ddot{q} + C(q,\dot{q})\dot{q} + G(q)
 \end{equation}
 Where:
-\begin{align}
+\begin{align*}
 	M(q) = \left(I_b + m_{nt}J^TJ\right), && C(q,\dot{q}) = \left(J^Tm_{nt}J\right), && G(q) = -\Gamma_{Gb} - \Gamma_{Gn}
-\end{align}
+\end{align*}
 \begin{itemize}
 	\item $I_b$ is the inertia matrix of the arms in joint space.
 	\item $m_{nt}$ is the total mass acting on the travelling plate.
@@ -268,7 +268,7 @@ with
 %
 \begin{columns}
 \begin{column}{0.4\textwidth}
-	Descrizione traiettoria
+	\centering{Point to point trajectory}
 \end{column}
 \begin{column}{0.6\textwidth}
 	\begin{center}
@@ -335,7 +335,7 @@ K_P = 500, \; K_D = 100
 %
 \begin{columns}
 \begin{column}{0.4\textwidth}
-	Descrizione traiettoria
+	\centering{Circular trajectory}
 \end{column}
 \begin{column}{0.6\textwidth}
 	\begin{center}
@@ -401,7 +401,7 @@ with
 %
 \begin{columns}
 \begin{column}{0.4\textwidth}
-	Descrizione traiettoria
+	\centering{Circular trajectory}
 \end{column}
 \begin{column}{0.6\textwidth}
 	\begin{center}
@@ -453,4 +453,184 @@ with
 \subsubsection{Adaptive backstepping}
 \begin{frame}
 \frametitle{Adaptive backstepping}
+Dynamic parameters vector:
+\begin{equation*}
+\pi =%
+\begin{pmatrix}
+	m_{nt}\\
+	I_{bi}\\
+	r_{Gb}
+\end{pmatrix}
+\begin{array}{c}
+	\rightarrow \\
+	\rightarrow \\
+	\rightarrow
+\end{array}
+\begin{array}{l}
+	Total\, mass\, acting\, on\, the\, plate \\
+	Upper\, arm\, center\, of\, the\, mass\, \\
+	Inertia\, contribution\, for\, each\, upper\, arm
+\end{array}
+\end{equation*}\\[8pt]
+Linear in the parameters reformulation of the dynamic equations:
+\begin{equation*}
+Y(q,\dot{q},\ddot{q})\pi=
+\begin{pmatrix}
+J^T(\bar{g} + \dot{X}) &\ddot{q} &g\cos \bar{q}
+\end{pmatrix}
+\begin{pmatrix}
+	m_{nt}\\ I_{bi}\\ m_r
+\end{pmatrix}=\tau
+\end{equation*}\\[8pt]
+\end{frame}
+%
+\begin{frame}
+\frametitle{Adaptive backstepping}
+Update estimation law:
+\begin{equation*}
+\dot{\hat{\pi}}=R^{-1}Y^T(q,\dot{q},\ddot{q})s\quad where\; R=30
+\end{equation*}
+Control equation:
+\[\tau_{AB} = Y(q,\dot{q},\ddot{q})\hat{\pi} - K_ds - e\]
+\begin{align*}
+\ddot{q}_r=\ddot{q}_d - \Lambda\dot{e}, && \dot{q}_r=\dot{q}_d - \Lambda e, && s=\dot{q}_ - \dot{q}_r, && K_d=50, && \Lambda=400
+\end{align*}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Adaptive backstepping}
+%
+\begin{columns}
+\begin{column}{0.4\textwidth}
+	\centering{Circular trajectory}
+\end{column}
+\begin{column}{0.6\textwidth}
+	\begin{center}
+		\movie[width=6cm,height=4.5cm,autostart,loop]%
+		{\includegraphics[width=6cm,height=4.5cm]{img/AdaptiveCircle/Visualizzatore}}%
+		{video/AdaptiveCircle.avi}
+	\end{center}
+\end{column}
+\end{columns}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Adaptive backstepping}
+%
+\begin{columns}
+	\begin{column}{0.5\textwidth}
+	\begin{figure}
+	\frame{\includegraphics[width=\linewidth]{img/AdaptiveCircle/Eerror}}
+	\end{figure}
+	\end{column}
+	%
+	\begin{column}{0.5\textwidth}
+	\begin{figure}
+	\frame{\includegraphics[width=\linewidth]{img/AdaptiveCircle/confronto}}
+	\end{figure}
+	\end{column}
+\end{columns}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Adaptive backstepping}
+%
+\begin{columns}
+	\begin{column}{0.5\textwidth}
+	\begin{figure}
+	\frame{\includegraphics[width=\linewidth]{img/AdaptiveCircle/tau}}
+	\end{figure}
+	\end{column}
+	%
+	\begin{column}{0.5\textwidth}
+	\begin{figure}
+	\frame{\includegraphics[width=\linewidth]{img/AdaptiveCircle/Power}}
+	\end{figure}
+	\end{column}
+\end{columns}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Adaptive backstepping}
+%
+\begin{columns}
+\begin{column}{0.4\textwidth}
+	\centering{$\infty$ trajectory with sinusoidal~z}
+\end{column}
+\begin{column}{0.6\textwidth}
+	\begin{center}
+		\movie[width=6cm,height=4.5cm,autostart,loop]%
+		{\includegraphics[width=6cm,height=4.5cm]{img/AdaptiveInfinity/Visualizzatore}}%
+		{video/AdaptiveInfinity.avi}
+	\end{center}
+\end{column}
+\end{columns}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Adaptive backstepping}
+%
+\begin{columns}
+	\begin{column}{0.5\textwidth}
+	\begin{figure}
+	\frame{\includegraphics[width=\linewidth]{img/AdaptiveInfinity/Eerror}}
+	\end{figure}
+	\end{column}
+	%
+	\begin{column}{0.5\textwidth}
+	\begin{figure}
+	\frame{\includegraphics[width=\linewidth]{img/AdaptiveInfinity/confronto}}
+	\end{figure}
+	\end{column}
+\end{columns}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Adaptive backstepping}
+%
+\begin{columns}
+	\begin{column}{0.5\textwidth}
+	\begin{figure}
+	\frame{\includegraphics[width=\linewidth]{img/AdaptiveInfinity/tau}}
+	\end{figure}
+	\end{column}
+	%
+	\begin{column}{0.5\textwidth}
+	\begin{figure}
+	\frame{\includegraphics[width=\linewidth]{img/AdaptiveInfinity/Power}}
+	\end{figure}
+	\end{column}
+\end{columns}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Adaptive backstepping - Parameters convergence}
+The convergence of parameters $\pi$ in an interval $[T, T+\Delta]$ is evaluated via the matrix:
+\begin{equation*}
+\Sigma = \int_{T}^{T+\Delta}Y^T(q,\dot{q},\ddot{q})Y(q,\dot{q},\ddot{q})dt
+\end{equation*}\\[8pt]
+\textbf{Convergence condition}: $rank(\Sigma) = n = 3$
+\end{frame}
+%
+\begin{frame}
+\frametitle{Adaptive backstepping - Parameters convergence}
+	\begin{columns}
+	\begin{column}{0.5\textwidth}
+	\begin{figure}
+	\frame{\includegraphics[width=\linewidth]{img/AdaptiveCircle/Parameters.eps}}
+	\captionsetup{labelformat=empty}
+	\caption{Circle trajectory}
+	\end{figure}
+	\end{column}
+	%
+	\begin{column}{0.5\textwidth}
+	\begin{figure}
+	\frame{\includegraphics[width=\linewidth]{img/AdaptiveInfinity/Parameters}}
+	\captionsetup{labelformat=empty}
+	\caption{Infinity trajectory}
+	\end{figure}
+	\end{column}
+\end{columns}
+\vspace{.5cm}
+\centering{In neither case the convergence condition is satisfied.}
 \end{frame}
