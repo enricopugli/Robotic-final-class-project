@@ -613,12 +613,13 @@ The approximate input-output feedback linearization for the system~\ref{eq:simpl
 %
 \begin{frame}
 \frametitle{Approximated Feedback Linearization - Drawbacks}
-The presented method is an exact Feedback linearization in the subset $x_1x_7 \neq 0$; in a neighbourhood of this subset it is a reliable linearization of the starting system. There is a subset, i.e., $x_5x_7 = g\,cosx_3\; \lor\; x_6x_8 = g\,cosx_4$ where the $E(x)$ matrix encounters a singularity, an avoidance strategy should be implemented in such case.
+The presented method is an exact Feedback linearization in the subset $x_1x_7 \neq 0$; in a neighbourhood of this subset it is a reliable linearization of the starting system.\\
+ There is a subset, i.e., $x_5x_7 = g\,cosx_3\; \lor\; x_6x_8 = g\,cosx_4$, where the $E(x)$ matrix encounters a singularity, an avoidance strategy should be implemented in such case.
 \end{frame}
 \subsection{Control}
 %
 \begin{frame}
-\frametitle{Control}
+\frametitle{Control law}
 Given the full controllability and observability of the system, a feedback regulator is applied to the feedback linearized system to place the poles of the plant in the stable plane. The resulting gain matrix is:
 \begin{equation*}
 	K =%
@@ -632,21 +633,21 @@ PD control:
 \tau_{PD}= K_Pe + K_D\dot{e}
 \end{equation*}
 with:
-\[ K_P = 1500\,, \qquad K_D = 60\]
+\[ K_P = 400\,, \qquad K_D = 1000\]
 \end{frame}
 %
 \begin{frame}
-\frametitle{Control - trajectories}
-\begin{center}
+\frametitle{Control - circular trajectory}
+	\begin{center}
 	\movie[width=11cm,height=5.01cm,autostart,loop,poster,showcontrols=true]%
 	{\includegraphics[width=11cm,height=5.01cm]{img/BallAndBeamImg/startframe}}%
 	{video/BallAndPlate.avi}
-\end{center}
+	\end{center}
 \end{frame}
 %
 \begin{frame}
-\frametitle{Control - trajectories}
-%
+\frametitle{Control - circular trajectory}
+
 \begin{columns}
 	\begin{column}{0.5\textwidth}
 	\begin{figure}
@@ -656,9 +657,25 @@ with:
 	%
 	\begin{column}{0.5\textwidth}
 	\begin{figure}
-	\frame{\includegraphics[width=\linewidth]{img/BallAndBeamImg/infinity_trajectory.eps}}
+	\frame{\includegraphics[width=\linewidth]{img/BallAndBeamImg/circular_trajectory_error.eps}}
 	\end{figure}
 	\end{column}
 \end{columns}
 \end{frame}
 %
+\begin{frame}
+\frametitle{Control - infinity trajectory}
+\begin{columns}
+	\begin{column}{0.5\textwidth}
+	\begin{figure}
+	\frame{\includegraphics[width=\linewidth]{img/BallAndBeamImg/infinity_trajectory.eps}}
+	\end{figure}
+	\end{column}
+	%
+	\begin{column}{0.5\textwidth}
+	\begin{figure}
+	\frame{\includegraphics[width=\linewidth]{img/BallAndBeamImg/infinity_trajectory_error.eps}}
+	\end{figure}
+	\end{column}
+\end{columns}
+\end{frame}
