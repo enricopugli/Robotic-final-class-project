@@ -1,9 +1,6 @@
 %!TEX root = ../main.tex
 %
 \section{Ball and plate}
-\begin{frame}
-	\frametitle{Ball and plate}
-\end{frame}
 %
 \begin{frame}
 \frametitle{Ball and plate}
@@ -180,125 +177,6 @@ Where \[\mathcal{E} = \frac{mr^2_b}{mr^2_b + I_b}\]
 \end{frame}
 %
 \subsection{Structural properties}
-\subsubsection{Controllability}
-\begin{frame}
-\frametitle{Accessibility}
-\textbf{Chow theorem.} If the accessibility distribution $\langle\Delta, \Delta_0\rangle = n$ in $x_0$ then the system is said to be locally accessible in $x_0$.\\
-\vspace{.8cm}
-Where $\Delta_0 = span\left\{g_1, g_2,..., g_d\right\}$ and $\Delta = span\left\{f, g_1, g_2,..., g_d\right\}$.\\
-\vspace{.8cm}
-We build then the matrix $Q(x)$ as:
-\begin{equation}
-	Q(x) = (g_1, g_2, ad_fg_1, ad_fg_2,\,...,ad^{n-1}_fg_1,ad^{n-1}_fg_2)
-\end{equation}
-And we evaluate its rank on the state space.
-\end{frame}
-\begin{frame}
-\frametitle{Accessibility}
-\begin{equation*}
-	Q(x) =%
-	\begin{pmatrix}
-		0 &0  &\star &\star &\star &\star &\star &\star &0 &0 &\star &\star &\star &\star &\star &\star \\
-		0 &0  &\star &\star &\star &\star &\star &\star &0 &0 &\star &\star &\star &\star &\star &\star \\
-		0 &-1 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 \\
-		0 &0  &0 &0 &0 &0 &0 &0 &0 &-1 &0 &0 &0 &0 &0 &0 \\
-		0 &\star &\star &\star &\star &\star &\star &\star &0 &\star &\star &\star &\star &\star &\star &\star \\
-		0 &\star &\star &\star &\star &\star &\star &\star &0 &\star &\star &\star &\star &\star &\star &\star \\
-		1 &0  &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 \\
-		0 &0  &0 &0 &0 &0 &0 &0 &1 &0 &0 &0 &0 &0 &0 &0
-	\end{pmatrix}
-\end{equation*}\\[10pt]
-Where the $\star$ elements represent the non constant terms of $Q(x)$ matrix.
-\end{frame}
-%
-\begin{frame}
-\frametitle{Accessibility}
-In order to calculate $rank(Q(x))$ we perform the following columns and rows swapping:
-\begin{align*}
-	row\;1 &\leftarrow\rightarrow row\;7 \\
-	column\;2 &\leftarrow\rightarrow column\;3 \\
-	column\;10 &\leftarrow\rightarrow column\;4 \\
-	column\;9 &\leftarrow\rightarrow column\;8 \\
-	column\;2 &\leftarrow\rightarrow column\;12 \\
-	column\;2 &\leftarrow\rightarrow column\;2 \\
-	columns\;5,6,7 &\leftarrow\rightarrow columns\;10,11,12
-\end{align*}
-\end{frame}
-%
-% \begin{frame}
-% \frametitle{Accessibility}
-% We obtain the matrix $\tilde{Q}(x)$ as follows:\\[10pt]
-% \begin{equation}
-% 	\tilde{Q}(x)=%
-% 	\begin{pmatrix}
-% 		1 &0     &0     &0     &0     &0     &0     &0 &\dots \\
-% 		0 &\star &0     &0     &\star &\star &\star &0 &\dots \\
-% 		0 &0     &-1    &0     &0     &0     &0     &0 &\dots \\
-% 		0 &0     &0     &-1    &0     &0     &0     &0  &\dots \\
-% 		0 &\star &\star &\star &\star &\star &\star &0 &\dots \\
-% 		0 &\star &\star &\star &\star &\star &\star &0 &\dots \\
-% 		0 &\star &0     &0     &\star &\star &\star &0 &\dots \\
-% 		0 &0     &0     &0     &0     &0     &0     &1 &\dots
-% 	\end{pmatrix}_{8\times16}
-% \end{equation}
-% \end{frame}
-%
-\begin{frame}
-\frametitle{Accessibility}
-We obtain the matrix $\tilde{Q}(x)$ as follows:\\[10pt]
-\begin{equation}
-	\tilde{Q}(x)=%
-	\begin{pmatrix}
-		\begin{matrix}
-		1 &0     &0     &0 \\
-		0 &\tilde{Q}_{22} &0     &0 \\
-		0 &0     &-1    &0 \\
-		0 &0     &0     &-1
-		\end{matrix}
-		&\begin{matrix}
-		0     &0     &0     &0 &\dots \\
-		\star &\star &\star &0 &\dots \\
-		0     &0     &0     &0 &\dots \\
-		0     &0     &0     &0  &\dots
-		\end{matrix}\\
-		\begingroup % keep the change local
-		\setlength\arraycolsep{8.5pt}
-		\begin{matrix}
-		0 \!&\star &\star &\star \\
-		0 \!&\star &\star &\star \\
-		0 \!&\star &0     &0     \\
-		0 \!&0     &0     &0
-		\end{matrix}
-		\endgroup
-		&\begin{array}{cr}
-			\mbox{\LARGE $\gimel$}
-			&\begin{matrix}
-			0 &\dots \\
-			0 &\dots \\
-			0 &\dots
-			\end{matrix}\\
-			\begin{matrix}
-			0 &0 &0
-			\end{matrix}
-			&\begin{matrix}
-			1 &\dots
-			\end{matrix}
-		\end{array}
-	\end{pmatrix}_{8\times16}
-\end{equation}\\[8pt]
-Where \[\tilde{Q}_{22} = 2Bx_5x_7 + 4Bx_6x_8 + Bg\,cosx_4\]
-\end{frame}
-%
-\begin{frame}
-\frametitle{Accessibility}
-\textbf{Rank condition.} To evaluate the rank of $\tilde{Q}(x_0)$ is sufficient to look at rank deficiency conditions of $\tilde{Q}_{22}$ and $\gimel$. The following cases are obtained:
-\begin{itemize}
-	\item $x_4 \equiv \pi/2\; \land (x_8 \equiv 0 \lor x_6 \equiv 0)\; \land (x_7 \equiv 0 \lor x_5 \equiv 0) \implies \tilde{Q}_{22}~\equiv~0 \implies rank(Q)<8$.\\ Which represent the physical condition where $\beta = \pi/2$ or $\alpha = \pi/2$  with null angular velocity, the system is out of the range of interest.
-	\item $\left(x_7 \equiv 0\; \land x_8 \equiv 0\;\land (x_3 \equiv \pi/2 \lor x_4 \equiv \pi/2)\right) \lor \left((x_1 \equiv 0\; \land x_2 \equiv 0\; \lor x_5 \equiv 0\; \lor x_6 \equiv 0)\;\land (x_3 \equiv \pi/2 \lor x_4 \equiv \pi/2)\right) \implies rank(\gimel)~<~3 \implies rank(Q)<8$.\\ Which represent the physical condition where $\beta = \pi/2$ or $\alpha = \pi/2$ with null angular velocity; the same arguments as above hold.
-	\item In all other cases we find $rank(Q(x_0))\equiv8$ and rank condition of controllability is satisfied.
-\end{itemize}
-\end{frame}
-%
 \subsubsection{Observability}
 \begin{frame}
 \frametitle{Observability}
@@ -339,13 +217,14 @@ d\mathcal{O} = \left\{\frac{\partial h(\bar{x})}{\partial x},\;\frac{\partial L_
 		0 &1 &0 &0 &0 &0 &0 &0 \\
 		0 &0 &0 &0 &1 &0 &0 &0 \\
 		0 &0 &0 &0 &0 &1 &0 &0 \\
-	    d\mathcal{O}_{51} &d\mathcal{O}_{52} &d\mathcal{O}_{53} &0 &0 &0 &d\mathcal{O}_{57} &d\mathcal{O}_{58} \\
-		0 &0 &d\mathcal{O}_{63} &0 &0 &0 &d\mathcal{O}_{67} &d\mathcal{O}_{68} \\
-		0 &0 &d\mathcal{O}_{73} &0 &d\mathcal{O}_{75} &d\mathcal{O}_{76} &d\mathcal{O}_{77} &d\mathcal{O}_{78} \\
-		0 &0 &0 &d\mathcal{O}_{84} &d\mathcal{O}_{85} &d\mathcal{O}_{86} &d\mathcal{O}_{87} &d\mathcal{O}_{88} \\
+	    \star &\star &\star &0 &0 &0 &\star &\star \\
+		0 &0 &\star &0 &0 &0 &\star &\star \\
+		0 &0 &\star &0 &\star &\star &\star &\star \\
+		0 &0 &0 &\star &\star &\star &\star &\star \\
 		\vdots &\vdots &\vdots &\vdots &\vdots &\vdots &\vdots &\vdots
 	\end{pmatrix}_{48\times8}
-\end{equation*}
+\end{equation*}\\[8pt]
+Where $\star$ elements represent non constant terms of $d\mathcal{O}(x)$ matrix.
 \end{frame}
 %
 \begin{frame}
@@ -362,39 +241,210 @@ We obtain the following matrix:
 		0 &1 &0 &0 &0 &0 &0 &0 \\
 		0 &0 &1 &0 &0 &0 &0 &0 \\
 		0 &0 &0 &1 &0 &0 &0 &0 \\
-	    d\tilde{\mathcal{O}}_{51} &d\tilde{\mathcal{O}}_{52} &0 &0 &d\tilde{\mathcal{O}}_{55} &0 &d\tilde{\mathcal{O}}_{57} &d\tilde{\mathcal{O}}_{58} \\
-		d\tilde{\mathcal{O}}_{61} &d\tilde{\mathcal{O}}_{62} &0 &0 &0 &d\tilde{\mathcal{O}}_{66} &d\tilde{\mathcal{O}}_{67} &d\tilde{\mathcal{O}}_{68} \\
-		0 &0 &d\tilde{\mathcal{O}}_{73} &d\tilde{\mathcal{O}}_{74} &d\tilde{\mathcal{O}}_{75} &0 &d\tilde{\mathcal{O}}_{77} &d\tilde{\mathcal{O}}_{78} \\
-		0 &0 &d\tilde{\mathcal{O}}_{83} &d\tilde{\mathcal{O}}_{84} &0 &d\tilde{\mathcal{O}}_{86} &d\tilde{\mathcal{O}}_{87} &d\tilde{\mathcal{O}}_{88} \\
+	    \star &\star &0 &0 &\star &0 &\star &\star \\
+		\star &\star &0 &0 &0 &\star &\star &\star \\
+		0 &0 &\star &\star &\star &0 &\star &\star \\
+		0 &0 &\star &\star &0 &\star &\star &\star \\
 		\vdots &\vdots &\vdots &\vdots &\vdots &\vdots &\vdots &\vdots
 	\end{pmatrix}_{48\times8}
 \end{equation*}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Observability}
+Studying the matrix obtained one can see that the first 4 rows are:
+\[
+\begin{pmatrix}
+I &\emptyset
+\end{pmatrix}_{4\times8}
+\]
+It is thus sufficient to append 4 rows to this matrix to find a matrix completion of dimension $n=8$.\\
+We find a block matrix in the form:
+\begin{equation*}
+	d\tilde{\mathcal{O}} =%
+	\begin{pmatrix}
+		A &B \\
+        C &D
+	\end{pmatrix}
+\end{equation*}\\[8pt]
+Given the determinant formula for block matrices: $det(M) = det(A-BD^{-1}C)det(D)$\\[8pt] We can see that it is sufficient to study the submatrix $D$ to conclude on eventual rank deficiency of $d\tilde{\mathcal{O}}$.
+\end{frame}
+%
+\begin{frame}
+\frametitle{Observability}
+We select the following rows sets $r_i$ of $d\tilde{\mathcal{O}}$:
+\begin{itemize}
+	\item $r_1 = \{21,22,23,6\} \implies det(D_1)\,=\,-2\,\mathcal{E}^4\,g^2\,{x_{1}}^2\,\cos x_{4}\,\sin x_{3} \implies rank(d\tilde{\mathcal{O}})<8\; \mathit{iff} \;x_1\equiv0\; \lor\; x_3\equiv0\; \lor\; x_4\equiv\pi/2$
+	\item $r_2 = \{37,38,5,40\} \implies det(D_2)\,=\,-2\,\mathcal{E}^4\,g^2\,{x_{2}}^2\,\cos x_{3}\,\sin x_{4} \implies rank(d\tilde{\mathcal{O}})<8\; \mathit{iff} \;x_2\equiv0\; \lor\; x_3\equiv\pi/2\; \lor\; x_4\equiv0$
+	\end{itemize}
+	%
+	Case $x_1 \equiv 0 \land x_2 \equiv 0$:
+	\begin{itemize}
+	\item $r_3 = \{5,6,23,24\} \implies det(D_3)\,=\,2\,\mathcal{E}^4\,g^2\,{x_{5}}^2\,\cos x_{3}\,\cos x_{4} \implies rank(d\tilde{\mathcal{O}})<8\; \mathit{iff} \;x_5\equiv0\; \lor\; x_3\equiv\pi/2\; \lor\; x_4\equiv\pi/2$
+	\item $r_4 = \{5,6,39,40\} \implies det(D_4)\,=\,2\,\mathcal{E}^4\,g^2\,{x_{6}}^2\,\cos x_{3}\,\cos x_{4} \implies rank(d\tilde{\mathcal{O}})<8\; \mathit{iff} \;x_6\equiv0\; \lor\; x_3\equiv\pi/2\; \lor\; x_4\equiv\pi/2$
+	\end{itemize}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Observability}
+	Case $x_3 \equiv 0\; \land\; x_4 \equiv 0$:
+	\begin{itemize}
+	\item $r_5 = \{5,6,23,24\} \implies det(D_5)\,=2\,\mathcal{E}^4\,g^2\,{x_{5}}^2 \implies rank(d\tilde{\mathcal{O}})<8\; \mathit{iff} x_5\equiv0$
+	\item $r_6 = \{5,6,39,40\} \implies det(D_6)\,=2\,\mathcal{E}^4\,g^2\,{x_{6}}^2 \implies rank(d\tilde{\mathcal{O}})<8\; \mathit{iff} x_6\equiv0$
+	\end{itemize}
+	%
+	Case $x_1 \equiv 0\; \land\; x_2 \equiv 0\; \land\; x_5 \equiv 0\; \land\; x_6 \equiv 0\;$:
+	\begin{itemize}
+	\item $r_7 = \{5,6,7,8\} \implies det(D_7)\,=\mathcal{E}^4\,g^4\,{\cos x_{3}}^2\,{\cos x_{4}}^2 \implies rank(d\tilde{\mathcal{O}})<8\; \mathit{iff} x_3\equiv\pi/2\; \lor\; x_4\equiv\pi/2$
+	\end{itemize}
+	%
+	Case $x_3 \equiv 0\; \land\; x_4 \equiv 0\; \land\; x_5 \equiv 0\; \land\; x_6 \equiv 0\;$:
+	\begin{itemize}
+	\item $r_8 = \{5,6,7,8\} \implies det(D_8)\,=\mathcal{E}^4\,g^4 \implies rank(d\tilde{\mathcal{O}})<8\; \mathit{iff} x_3\equiv\pi/2\; \lor\; x_4\equiv\pi/2$
+	\end{itemize}
 
 \end{frame}
 %
 \begin{frame}
 \frametitle{Observability}
-Where:
+\textbf{Rank condition.} Collecting the conditions highlighted above we can conclude for the global observability of the system since the matrix $rank(d\mathcal{O}) = n = 8$ everywhere with the exclusion of the subsets $S_1 = x_3\equiv\pi/2$ and $S_2 = x_4\equiv\pi/2$ that are out of the range of interest.
+\end{frame}
+%
+\subsubsection{Controllability}
+\begin{frame}
+\frametitle{Controllability}
+\textbf{Chow theorem.} If the accessibility distribution $\langle\Delta, \Delta_0\rangle = n$ in $x_0$ then the system is said to be locally accessible in $x_0$.\\
+\vspace{.8cm}
+Where $\Delta_0 = span\left\{g_1, g_2,..., g_d\right\}$ and $\Delta = span\left\{f, g_1, g_2,..., g_d\right\}$.\\
+\vspace{.8cm}
+We build then the matrix $Q(x)$ as:
+\begin{equation}
+	Q(x) = (g_1, g_2, ad_fg_1, ad_fg_2,\,...,ad^{n-1}_fg_1,ad^{n-1}_fg_2)
+\end{equation}
+And we evaluate its rank on the state space.
+\end{frame}
+\begin{frame}
+\frametitle{Controllability matrix}
+\begin{equation*}
+	Q(x) =%
+	\begin{pmatrix}
+		0 &0  &\star &\star &\star &\star &\star &\star &0 &0 &\star &\star &\star &\star &\star &\star \\
+		0 &0  &\star &\star &\star &\star &\star &\star &0 &0 &\star &\star &\star &\star &\star &\star \\
+		0 &-1 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 \\
+		0 &0  &0 &0 &0 &0 &0 &0 &0 &-1 &0 &0 &0 &0 &0 &0 \\
+		0 &\star &\star &\star &\star &\star &\star &\star &0 &\star &\star &\star &\star &\star &\star &\star \\
+		0 &\star &\star &\star &\star &\star &\star &\star &0 &\star &\star &\star &\star &\star &\star &\star \\
+		1 &0  &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 \\
+		0 &0  &0 &0 &0 &0 &0 &0 &1 &0 &0 &0 &0 &0 &0 &0
+	\end{pmatrix}
+\end{equation*}\\[10pt]
+Where $\star$ elements represent non constant terms of $Q(x)$ matrix.
+\end{frame}
+%
+\begin{frame}
+\frametitle{Controllability matrix}
+In order to calculate $rank(Q(x))$ we perform the following columns and rows swapping:
 \begin{align*}
-d\mathcal{O}_{51} &=\mathcal{E}x^2_7 \nonumber &&
-d\mathcal{O}_{53} =-\mathcal{E}g\,cosx_3 \nonumber \\
-d\mathcal{O}_{57} &=2\mathcal{E}x_1x_7 \nonumber &&
-d\mathcal{O}_{62} =\mathcal{E}x^2_8 \nonumber \\
-d\mathcal{O}_{64} &=-\mathcal{E}g\,cosx_4 \nonumber &&
-d\mathcal{O}_{68} =2\mathcal{E}x_2x_8 \nonumber \\
-d\mathcal{O}_{73} &=\mathcal{E}gx_7\,sinx_3 \nonumber &&
-d\mathcal{O}_{75} =\mathcal{E}x^2_7 \nonumber \\
-d\mathcal{O}_{77} &=2\mathcal{E}x_5x_7 - \mathcal{E}g\,cosx_3 \nonumber &&
-d\mathcal{O}_{84} =\mathcal{E}gx_8\,sinx_4 \nonumber \\
-d\mathcal{O}_{86} &=\mathcal{E}x^2_8 \nonumber &&
-d\mathcal{O}_{88} =2\mathcal{E}x_6x_8 - \mathcal{E}g\,cosx_4 \nonumber \\
+	column\;2 &\leftarrow\rightarrow column\;3 \\
+	row\;1 &\leftarrow\rightarrow row\;7 \\
+	column\;10 &\leftarrow\rightarrow column\;4 \\
+	column\;9 &\leftarrow\rightarrow column\;8 \\
+	row\;2 &\leftarrow\rightarrow row\;8 \\
+	column\;2 &\leftarrow\rightarrow column\;8
 \end{align*}
 \end{frame}
 %
 \begin{frame}
-\frametitle{Observability}
-\textbf{Rank condition.} Evaluating the rank of the squared sub-matrix $d\mathcal{O}_{1-8}$ in the equilibria we can conclude for the global observability of the system since the matrix $rank(d\mathcal{O}) = n = 8$ everywhere.
+\frametitle{Controllability matrix}
+We obtain the matrix $\tilde{Q}(x)$::\\[10pt]
+\begin{equation}
+	\tilde{Q}(x)=%
+	\begin{pmatrix}
+		1 &0     &0     &0     &0     &0     &0     &0     &\dots \\
+		0 &1     &0     &0     &0     &0     &0     &0     &\dots \\
+		0 &0     &-1    &0     &0     &0     &0     &0     &\dots \\
+		0 &0     &0     &-1    &0     &0     &0     &0     &\dots \\
+		0 &0     &\star &\star &\star &\star &\star &\star &\dots \\
+		0 &0     &\star &\star &\star &\star &\star &\star &\dots \\
+		0 &0     &0     &0     &\star &\star &\star &\star &\dots \\
+		0 &0     &0     &0     &\star &\star &\star &\star &\dots
+	\end{pmatrix}_{8\times16}
+\end{equation}
 \end{frame}
+%
+\begin{frame}
+	\frametitle{Controllability matrix}
+Once again we obtained a block submatrix in the form:
+\[
+\begin{pmatrix}
+	A &B\\
+	C &D
+\end{pmatrix}
+\]
+with $A$ trivial and $B=\emptyset$. However the equations appearing in the elements of the candidate submatrices $D_i$ have a high degree of complexity and we are not able to conclude on a general result for accessibility.\\[4pt]
+\end{frame}
+%
+\begin{frame}
+\frametitle{Controllability - particular case}
+\textbf{Case $x_7 \equiv 0\; \land\; x_8 \equiv 0\;$}:\\[4pt]
+$c_1 = \{8,10,11,12\} \implies det(D_1)\,=\mathcal{E}^4\,g^4\,\cos^2 x_{3}\,\cos^2 x_{4} \implies rank(\tilde{Q}(x))<8\; \mathit{iff} x_4\equiv\pi/2$\\[4pt]
+In all the equilibria contained in this subspace we can conclude for accessibility since $x_4\equiv\pi/2$ is out of the range of interest.
+\end{frame}
+% \begin{frame}
+% \frametitle{Accessibility}
+% We obtain the matrix $\tilde{Q}(x)$ as follows:\\[10pt]
+% \begin{equation}
+% 	\tilde{Q}(x)=%
+% 	\begin{pmatrix}
+% 		\begin{matrix}
+% 		1 &0     &0     &0 \\
+% 		0 &\tilde{Q}_{22} &0     &0 \\
+% 		0 &0     &-1    &0 \\
+% 		0 &0     &0     &-1
+% 		\end{matrix}
+% 		&\begin{matrix}
+% 		0     &0     &0     &0 &\dots \\
+% 		\star &\star &\star &0 &\dots \\
+% 		0     &0     &0     &0 &\dots \\
+% 		0     &0     &0     &0  &\dots
+% 		\end{matrix}\\
+% 		\begingroup % keep the change local
+% 		\setlength\arraycolsep{8.5pt}
+% 		\begin{matrix}
+% 		0 \!&\star &\star &\star \\
+% 		0 \!&\star &\star &\star \\
+% 		0 \!&\star &0     &0     \\
+% 		0 \!&0     &0     &0
+% 		\end{matrix}
+% 		\endgroup
+% 		&\begin{array}{cr}
+% 			\mbox{\LARGE $\gimel$}
+% 			&\begin{matrix}
+% 			0 &\dots \\
+% 			0 &\dots \\
+% 			0 &\dots
+% 			\end{matrix}\\
+% 			\begin{matrix}
+% 			0 &0 &0
+% 			\end{matrix}
+% 			&\begin{matrix}
+% 			1 &\dots
+% 			\end{matrix}
+% 		\end{array}
+% 	\end{pmatrix}_{8\times16}
+% \end{equation}\\[8pt]
+% Where \[\tilde{Q}_{22} = 2Bx_5x_7 + 4Bx_6x_8 + Bg\,cosx_4\]
+% \end{frame}
+%
+% \begin{frame}
+% \frametitle{Accessibility}
+% \textbf{Rank condition.} To evaluate the rank of $\tilde{Q}(x_0)$ is sufficient to look at rank deficiency conditions of $\tilde{Q}_{22}$ and $\gimel$. The following cases are obtained:
+% \begin{itemize}
+% 	\item $x_4 \equiv \pi/2\; \land (x_8 \equiv 0 \lor x_6 \equiv 0)\; \land (x_7 \equiv 0 \lor x_5 \equiv 0) \implies \tilde{Q}_{22}~\equiv~0 \implies rank(Q)<8$.\\ Which represent the physical condition where $\beta = \pi/2$ or $\alpha = \pi/2$  with null angular velocity, the system is out of the range of interest.
+% 	\item $\left(x_7 \equiv 0\; \land x_8 \equiv 0\;\land (x_3 \equiv \pi/2 \lor x_4 \equiv \pi/2)\right) \lor \left((x_1 \equiv 0\; \land x_2 \equiv 0\; \lor x_5 \equiv 0\; \lor x_6 \equiv 0)\;\land (x_3 \equiv \pi/2 \lor x_4 \equiv \pi/2)\right) \implies rank(\gimel)~<~3 \implies rank(Q)<8$.\\ Which represent the physical condition where $\beta = \pi/2$ or $\alpha = \pi/2$ with null angular velocity; the same arguments as above hold.
+% 	\item In all other cases we find $rank(Q(x_0))\equiv8$ and rank condition of controllability is satisfied.
+% \end{itemize}
+% \end{frame}
 %
 \subsection{Feedback linearization}
 \begin{frame}
@@ -404,7 +454,12 @@ Feedback linearization is only applicable to special cases of nonlinear systems 
 %
 \begin{frame}
 \frametitle{Approximated Feedback linearization}
-The \textit{Ball and plate} system described by the equations~\ref{BP_equations} fails to have full relative degree and does not fall under this class of systems. The Approximated Feedback Linearization (\textit{AFL}) approach proposed by Ming et al.\footfullcite{Ho2013} is thus used to control the system. This method consists in a two-steps approximation: higher order coupling terms are neglected to reduce the system to two decoupled \textit{Ball and beam} systems; then a second approximation is done to obtain an input-output feedback linearizable system.
+\textit{Ball and plate} system described by the equations~\ref{BP_equations} fails to have full relative degree and does not fall under this class of systems. The Approximated Feedback Linearization (\textit{AFL}) approach proposed by Ming et al.\footfullcite{Ho2013} is thus used to control the system.
+\end{frame}
+%
+\begin{frame}
+\frametitle{Approximated Feedback linearization}
+This method consists in a two-steps approximation: higher order coupling terms are neglected to reduce the system to two decoupled \textit{Ball and beam} systems; feedback linearization those kind of systems have been studied by Sastry et al. \footfullcite{Hauser1992} who introduced a second approximation in order to obtain an input-output feedback linearizable system.
 \end{frame}
 %
 \begin{frame}
@@ -418,7 +473,7 @@ The \textit{Ball and plate} system described by the equations~\ref{BP_equations}
 	x_7\\
 	x_8\\
 	\mathcal{E}(\hcancel[red]{x_7x_8x_2} + x^2_3x_1 - g\,sinx_3)\\
-	\mathcal{E}(\hcancel[red]{x_7x_8x_1} + x^2_3x_2 - g\,sinx_4)\\
+	\mathcal{E}(\hcancel[red]{x_7x_8x_1} + x^2_4x_2 - g\,sinx_4)\\
 	0\\
 	0\\
 	\end{pmatrix}

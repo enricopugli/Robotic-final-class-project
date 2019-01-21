@@ -178,6 +178,36 @@
       \endverb
       \keyw{Ball And Plate System,Feedback Linearization,Visual Servoing}
     \endentry
+    \entry{Hauser1992}{misc}{}
+      \name{author}{3}{}{%
+        {{hash=7cce0fa33f475547c3087683bdc259d8}{%
+           family={Hauser},
+           family_i={H\bibinitperiod},
+           given={John},
+           given_i={J\bibinitperiod}}}%
+        {{hash=c4a1788a4edb56f0874e1512b037aeb8}{%
+           family={Shankar},
+           family_i={S\bibinitperiod},
+           given={Sastry},
+           given_i={S\bibinitperiod}}}%
+        {{hash=e68b658812d858e8dd61c79faf97a219}{%
+           family={Kokotovic},
+           family_i={K\bibinitperiod},
+           given={Petar},
+           given_i={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE transaction on Automatic control}%
+      }
+      \strng{namehash}{852c49106641268100d35adbf18fc5af}
+      \strng{fullhash}{852c49106641268100d35adbf18fc5af}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Nonlinear Control VIa Approximate Input-Output Linearization: The Ball and Beam Example}}
+      \field{year}{1992}
+    \endentry
   \endsortlist
 \endrefsection
 \endinput
