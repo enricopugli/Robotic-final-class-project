@@ -57,3 +57,16 @@ E = [E(:,1:4),E(:,10:12),E(:,8:9),E(:,5:7),E(:,13:16)];
 
 E_det_el = diag(E);
 
+
+
+%% Decomposizione LU 
+
+E2 = E(1:8, 1:8);
+[L,U] = lu(E2);
+spy(U);
+lambda = eig(U);
+
+
+
+
+
