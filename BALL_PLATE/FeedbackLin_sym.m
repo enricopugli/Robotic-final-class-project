@@ -92,19 +92,22 @@ Sfl = ss(Afl, Bfl, Cfl, Dfl);
 tf_fl = tf(Sfl);
 
 %% Controllo primo sistema disaccoppiato
-% Afl1 = diag(ones(3,1),1);
-% Bfl1 = [zeros(3,1);
-%        1];
-% Cfl1 = [1, zeros(1,3)];
-% Dfl1 = 0;
-% 
-% Sfl1 = ss(Afl1, Bfl1, Cfl1, Dfl1);
-% tf_fl1 = tf(Sfl1);
-% 
-% stable_poles1 = -[1, 2, 3, 4];
-% 
-% K1 = place(Afl1, Bfl1, stable_poles1);
-% 
-% S1 = ss(Afl1 - Bfl1*K1, Bfl1, Cfl1, Dfl1);
-% 
-% tf_fl1_stab = tf(S1);
+Afl1 = diag(ones(3,1),1);
+Bfl1 = [zeros(3,1);
+       1];
+Cfl1 = [1, zeros(1,3)];
+Dfl1 = 0;
+
+Sfl1 = ss(Afl1, Bfl1, Cfl1, Dfl1);
+tf_fl1 = tf(Sfl1);
+
+stable_poles1 = -[1, 2, 3, 4];
+
+K1 = place(Afl1, Bfl1, stable_poles1);
+
+S1 = ss(Afl1 - Bfl1*K1, Bfl1, Cfl1, Dfl1);
+
+tf_fl1_stab = tf(S1);
+
+PIDFcontroller = pidTuner(tf_fl1_stab, 'PIDF');
+

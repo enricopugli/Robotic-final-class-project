@@ -53,9 +53,11 @@ K = place(Alin, Blin, -[1,2,3,4,5,6,7,8]);
 
 S = ss(Alin - Blin*K, Blin, Clin, Dlin);
 
-PID = -.25;
+s = tf('s');
 
-L = PID*S;
+PID = -3;
+
+L = PID*S/s;
 
 Fp = feedback(L,eye(2));
 
