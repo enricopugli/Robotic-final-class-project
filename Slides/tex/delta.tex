@@ -467,9 +467,9 @@ Dynamic parameters vector:
 	\rightarrow
 \end{array}
 \begin{array}{l}
-	Total\, mass\, acting\, on\, the\, plate \\
-	Upper\, arm\, center\, of\, the\, mass\, \\
-	Inertia\, contribution\, for\, each\, upper\, arm
+	Total\, moving\, platform\, mass \\
+	Inertia\, contribution\, for\, each\, upper\, arm \\
+	Upper\, arm\, center\, of\, mass
 \end{array}
 \end{equation*}\\[8pt]
 Linear in the parameters reformulation of the dynamic equations:
@@ -479,14 +479,14 @@ Y(q,\dot{q},\ddot{q})\pi=
 J^T(\bar{g} + \dot{X}) &\ddot{q} &g\cos \bar{q}
 \end{pmatrix}
 \begin{pmatrix}
-	m_{nt}\\ I_{bi}\\ m_r
+	m_{nt}\\ I_{bi}\\ r_{Gb}
 \end{pmatrix}=\tau
 \end{equation*}\\[8pt]
 \end{frame}
 %
 \begin{frame}
 \frametitle{Adaptive backstepping}
-Update estimation law:
+Estimation update law:
 \begin{equation*}
 \dot{\hat{\pi}}=R^{-1}Y^T(q,\dot{q},\ddot{q})s\quad where\; R=30
 \end{equation*}

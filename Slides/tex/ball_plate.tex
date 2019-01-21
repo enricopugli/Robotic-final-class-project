@@ -92,7 +92,7 @@ M(q) &=%
 	0 &0 &\left(I_b + I_p + mx^2\right) &mxy\\
 	0 &0 &mxy &\left(I_b + I_p + my^2\right)
 \end{pmatrix}\\
-C(q,\dot{q}) &=%
+C(q,\dot{q}) &=m%
 \begin{pmatrix}
 	0 &0 &-\dot{\alpha} x &-\dot{\alpha} y\\
 	0 &0 &-\dot{\beta} x &-\dot{\beta} y\\
@@ -152,8 +152,8 @@ We obtain the following system in affine form:
 	x_6\\
 	x_7\\
 	x_8\\
-	\mathcal{E}(x_7x_8x_2 + x^2_3x_1 - g\,sinx_3)\\
-	\mathcal{E}(x_7x_8x_1 + x^2_3x_2 - g\,sinx_4)\\
+	\mathcal{E}(x_7x_8x_2 + x^2_7x_1 - g\,sinx_3)\\
+	\mathcal{E}(x_7x_8x_1 + x^2_8x_2 - g\,sinx_4)\\
 	0\\
 	0\\
 	\end{pmatrix}
@@ -459,7 +459,7 @@ Feedback linearization is only applicable to special cases of nonlinear systems 
 %
 \begin{frame}
 \frametitle{Approximated Feedback linearization}
-This method consists in a two-steps approximation: higher order coupling terms are neglected to reduce the system to two decoupled \textit{Ball and beam} systems; feedback linearization those kind of systems have been studied by Sastry et al. \footfullcite{Hauser1992} who introduced a second approximation in order to obtain an input-output feedback linearizable system.
+This method consists in a two-steps approximation: higher order coupling terms are neglected to reduce the system to two decoupled \textit{Ball and beam} systems; feedback linearization for those kind of systems have been studied by Sastry et al. \footfullcite{Hauser1992} who introduced a second approximation in order to obtain an input-output feedback linearizable system.
 \end{frame}
 %
 \begin{frame}
@@ -493,7 +493,7 @@ This method consists in a two-steps approximation: higher order coupling terms a
 	 	u_2
 	\end{pmatrix}
 \end{equation}\\[10pt]
-Assuming that the operating ranges of $\alpha$ and $\beta$ are small, high order coupling terms are therefore small and neglected.
+Assuming that operating ranges of velocities $x_7=\dot{\alpha}$ and $x_8=\dot{\beta}$ are small, high order coupling terms are therefore small and neglected.
 \end{frame}
 %
 \begin{frame}
