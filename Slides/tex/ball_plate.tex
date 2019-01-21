@@ -4,12 +4,21 @@
 %
 \begin{frame}
 \frametitle{Ball and plate}
-%
 \begin{figure}
 		{\includegraphics[width=.8\linewidth]{img/ballplate.pdf}}
 		\caption{Coordinate frame of the ball and plate system}
 		\label{fig:BallPlate}
 \end{figure}
+\end{frame}
+%
+\begin{frame}
+	\frametitle{Ball and plate - model assumption}
+	\begin{itemize}
+    \item There is no slip between the ball and the plate.
+ 	\item The contact between the ball and the plate is not lost.
+ 	\item There is no friction (e.g. from air or ball-plate contact).
+ 	\item The ball is an ideal sphere or spherical shell and homogenous.
+	\end{itemize}
 \end{frame}
 %
 \begin{frame}
@@ -289,18 +298,18 @@ We select the following rows sets $r_i$ of $d\tilde{\mathcal{O}}$:
 \frametitle{Observability}
 	Case $x_3 \equiv 0\; \land\; x_4 \equiv 0$:
 	\begin{itemize}
-	\item $r_5 = \{5,6,23,24\} \implies det(D_5)\,=2\,\mathcal{E}^4\,g^2\,{x_{5}}^2 \implies rank(d\tilde{\mathcal{O}})<8\; \mathit{iff} x_5\equiv0$
-	\item $r_6 = \{5,6,39,40\} \implies det(D_6)\,=2\,\mathcal{E}^4\,g^2\,{x_{6}}^2 \implies rank(d\tilde{\mathcal{O}})<8\; \mathit{iff} x_6\equiv0$
+	\item $r_5 = \{5,6,23,24\} \implies det(D_5)\,=2\,\mathcal{E}^4\,g^2\,{x_{5}}^2 \implies rank(d\tilde{\mathcal{O}})<~8\; \mathit{iff} x_5\equiv0$
+	\item $r_6 = \{5,6,39,40\} \implies det(D_6)\,=2\,\mathcal{E}^4\,g^2\,{x_{6}}^2 \implies rank(d\tilde{\mathcal{O}})<~8\; \mathit{iff} x_6\equiv0$
 	\end{itemize}
 	%
 	Case $x_1 \equiv 0\; \land\; x_2 \equiv 0\; \land\; x_5 \equiv 0\; \land\; x_6 \equiv 0\;$:
 	\begin{itemize}
-	\item $r_7 = \{5,6,7,8\} \implies det(D_7)\,=\mathcal{E}^4\,g^4\,{\cos x_{3}}^2\,{\cos x_{4}}^2 \implies rank(d\tilde{\mathcal{O}})<8\; \mathit{iff} x_3\equiv\pi/2\; \lor\; x_4\equiv\pi/2$
+	\item $r_7 = \{5,6,7,8\} \implies det(D_7)\,=\mathcal{E}^4\,g^4\,{\cos x_{3}}^2\,{\cos x_{4}}^2 \implies rank(d\tilde{\mathcal{O}})<~8\; \mathit{iff} x_3\equiv\pi/2\; \lor\; x_4\equiv\pi/2$
 	\end{itemize}
 	%
 	Case $x_3 \equiv 0\; \land\; x_4 \equiv 0\; \land\; x_5 \equiv 0\; \land\; x_6 \equiv 0\;$:
 	\begin{itemize}
-	\item $r_8 = \{5,6,7,8\} \implies det(D_8)\,=\mathcal{E}^4\,g^4 \implies rank(d\tilde{\mathcal{O}})<8\; \mathit{iff} x_3\equiv\pi/2\; \lor\; x_4\equiv\pi/2$
+	\item $r_8 = \{5,6,7,8\} \implies det(D_8)\,=\mathcal{E}^4\,g^4 \implies rank(d\tilde{\mathcal{O}})<~8\; \mathit{iff} x_3\equiv\pi/2\; \lor\; x_4\equiv\pi/2$
 	\end{itemize}
 
 \end{frame}
@@ -602,29 +611,54 @@ The approximate input-output feedback linearization for the system~\ref{eq:simpl
 \end{equation}
 \end{frame}
 %
+\begin{frame}
+\frametitle{Approximated Feedback Linearization - Drawbacks}
+The presented method is an exact Feedback linearization in the subset $x_1x_7 \neq 0$; in a neighbourhood of this subset it is a reliable linearization of the starting system. There is a subset, i.e., $x_5x_7 = g\,cosx_3\; \lor\; x_6x_8 = g\,cosx_4$ where the $E(x)$ matrix encounters a singularity, an avoidance strategy should be implemented in such case.
+\end{frame}
 \subsection{Control}
 %
 \begin{frame}
-\frametitle{Full state feedback regulator}
+\frametitle{Control}
 Given the full controllability and observability of the system, a feedback regulator is applied to the feedback linearized system to place the poles of the plant in the stable plane. The resulting gain matrix is:
-\begin{equation}
+\begin{equation*}
 	K =%
 	\begin{pmatrix}
 		24 &50 &13 &10 &0 &0 &0 &0 \\
 		0 &0 &0 &0 &24 &50 &13 &10
 	\end{pmatrix}
-\end{equation}
-\end{frame}
-\begin{frame}
-\frametitle{PID Control}
+\end{equation*}\\[8pt]
+PD control:
+\begin{equation*}
+\tau_{PD}= K_Pe + K_D\dot{e}
+\end{equation*}
+with:
+\[ K_P = 1500\,, \qquad K_D = 60\]
 \end{frame}
 %
 \begin{frame}
-\frametitle{PID Control}
-%
+\frametitle{Control - trajectories}
 \begin{center}
 	\movie[width=11cm,height=5.01cm,autostart,loop,poster,showcontrols=true]%
-	{}%
+	{\includegraphics[width=11cm,height=5.01cm]{img/BallAndBeamImg/startframe}}%
 	{video/BallAndPlate.avi}
 \end{center}
 \end{frame}
+%
+\begin{frame}
+\frametitle{Control - trajectories}
+%
+\begin{columns}
+	\begin{column}{0.5\textwidth}
+	\begin{figure}
+	\frame{\includegraphics[width=\linewidth]{img/BallAndBeamImg/circular_trajectory.eps}}
+	\end{figure}
+	\end{column}
+	%
+	\begin{column}{0.5\textwidth}
+	\begin{figure}
+	\frame{\includegraphics[width=\linewidth]{img/BallAndBeamImg/infinity_trajectory.eps}}
+	\end{figure}
+	\end{column}
+\end{columns}
+\end{frame}
+%
