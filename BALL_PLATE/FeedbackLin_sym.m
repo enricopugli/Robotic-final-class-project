@@ -108,6 +108,9 @@ K1 = place(Afl1, Bfl1, stable_poles1);
 S1 = ss(Afl1 - Bfl1*K1, Bfl1, Cfl1, Dfl1);
 
 tf_fl1_stab = tf(S1);
+<<<<<<< HEAD
 
 PIDFcontroller = pidTuner(tf_fl1_stab, 'PIDF');
 
+=======
+>>>>>>> b043bd83101c328f9dfaacd5d7b93290333fa446
