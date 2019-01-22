@@ -396,8 +396,8 @@ with $A$ trivial and $B=\emptyset$. However the equations appearing in the eleme
 \begin{frame}
 \frametitle{Controllability - particular case}
 \textbf{Case $x_7 \equiv 0\; \land\; x_8 \equiv 0\;$}:\\[4pt]
-$c_1 = \{8,10,11,12\} \implies det(D_1)\,=\mathcal{E}^4\,g^4\,\cos^2 x_{3}\,\cos^2 x_{4} \implies rank(\tilde{Q}(x))<8\; \mathit{iff} x_4\equiv\pi/2$\\[4pt]
-In all the equilibria contained in this subspace we can conclude for accessibility since $x_4\equiv\pi/2$ is out of the range of interest.
+$c_1 = \{8,10,11,12\} \implies det(D_1)\,=\mathcal{E}^4\,g^4\,\cos^2 x_{3}\,\cos^2 x_{4} \implies rank(\tilde{Q}(x))<8\; \mathit{iff} x_3\equiv\pi/2\;\lor\;x_4\equiv\pi/2$\\[4pt]
+In all the equilibria contained in this subspace we can conclude for accessibility since $\alpha,\beta\equiv\pi/2$ is out of the range of interest.
 \end{frame}
 % \begin{frame}
 % \frametitle{Accessibility}
@@ -613,7 +613,7 @@ The approximate input-output feedback linearization for the system~\ref{eq:simpl
 %
 \begin{frame}
 \frametitle{Approximated Feedback Linearization - Drawbacks}
-The presented method is an exact Feedback linearization in the subset $x_1x_7 \neq 0$; in a neighbourhood of this subset it is a reliable linearization of the starting system.\\
+The presented method is an exact Feedback linearization in the subset $x_1x_7 = 0$; in a neighbourhood of this subset it is a reliable linearization of the starting system.\\
  There is a subset, i.e., $x_5x_7 = g\,cosx_3\; \lor\; x_6x_8 = g\,cosx_4$, where the $E(x)$ matrix encounters a singularity, an avoidance strategy should be implemented in such case.
 \end{frame}
 \subsection{Control}
